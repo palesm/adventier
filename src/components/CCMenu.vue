@@ -14,7 +14,7 @@
             <div id="Ujpest" style="display: none; font-size: 10px;">
               Team: Újpesti Barmok
               <br />
-              Badges: Butcher, GnomeKiller
+              Badges: {{getPlayerBadges}}
               <br />
               Items: Goblin Bal Here
             </div>
@@ -53,6 +53,17 @@ export default {
   },
   components: {
     AdvenTIERmap
+  },
+  computed: {
+    getPlayerBadges() {
+      var result = "";
+      var list = this.$store.getters.getBadges;
+      list.forEach(element => {
+        result += element;
+        result += ", ";
+      });
+      return result;
+    }
   },
   methods: {
     onBpClick() {

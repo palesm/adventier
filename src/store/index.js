@@ -12,6 +12,10 @@ const store = createStore({
           "Hős péncél",
           "NonBinary kard"
         ],
+        Badges: [
+          "Butcher",
+          "GnomeKiller"
+        ],
         Str: 10,
         Def: 10
       }
@@ -49,6 +53,9 @@ const store = createStore({
     },
     getDef (state) {
       return state.PlayerStats.Def
+    },
+    getBadges (state) {
+      return state.PlayerStats.Badges
     }
   }
 })
