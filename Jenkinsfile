@@ -1,8 +1,7 @@
 pipeline {
   agent {
     kubernetes {
-      yamlFile 'k8s/jenkins-agent.ya
-      ml'
+      yamlmlFile 'k8s/jenkins-agent.yaml'
       defaultContainer 'docker'
       //idleMinutes 60
     }
@@ -17,7 +16,7 @@ pipeline {
             sh 'docker buildx create  --driver kubernetes --name builder --node arm64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=arm64 --use'
             sh 'docker buildx create --append --driver kubernetes --name builder --node amd64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=amd64 --use'
             sh 'docker buildx build -t ${IMAGEREPO}/${IMAGETAG} --platform linux/arm64,linux/amd64 --push . '
-            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.ya
+            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.yaml
             ml'
           }
      }
@@ -25,18 +24,18 @@ pipeline {
     stage('deploy ') {
       steps {
         sh '''
-        cp -i k8s/deployment.ya
-        ml k8s/deployment.ya
+        cp -i k8s/deployment.yaml
+        ml k8s/deployment.yaml
         ml
-        sed -i "s/BRANCHNAME/${BRANCH_NAME_LC}/" k8s/deployment.ya
+        sed -i "s/BRANCHNAME/${BRANCH_NAME_LC}/" k8s/deployment.yaml
         ml
-        sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yya
+        sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yyaml
         mlaml
         '''
-        sh 'cat k8s/deployment.ya
+        sh 'cat k8s/deployment.yaml
         ml'
         container(name: 'kubectl') {
-        sh 'kubectl apply -f k8s/deployment.ya
+        sh 'kubectl apply -f k8s/deployment.yaml
         ml'
         sh 'kubectl rollout status deployment/adventier --namespace=${BRANCH_NAME_LC}' 
 
