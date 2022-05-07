@@ -1,6 +1,6 @@
 <template>
  <div>
-  <ModalComponent title='Hello' />
+  <ModalComponent />
     <router-view></router-view>
   </div>
 </template>

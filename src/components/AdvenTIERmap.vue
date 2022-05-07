@@ -1,6 +1,6 @@
 <template>
   <MapComponent />
-  <ModalComponent title='Hello' />
+  <ModalComponent />
 </template>
 
 <script>

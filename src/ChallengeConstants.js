@@ -11,9 +11,7 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     photo: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
-    answer1: "naná",
-    answer2: "hogyne",
-    answer3: "persze"
+    answers: ["naná", "persze", "hogyne"]
   },
   halaszbastya: {
     title: "Halászbástya",
