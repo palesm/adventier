@@ -36,14 +36,6 @@
 var BpHidden = true;
 var UjpestHidden = true;
 
-window.onload = function () {
-
-    document.getElementById("ZugloButton").onclick = function () {
-    document.getElementsByClassName("container")[0].remove();
-    document.getElementById("MAp").style.display = "inline";
-  }
-}
-
 import AdvenTIERmap from './AdvenTIERmap.vue';
 
 export default {

@@ -1,10 +1,10 @@
 <template lang="">
-  <div v-show='showModal'>
+  <div v-if='showModal'>
     <div class="modal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">{{ title }}</h5>
+            <h5 class="modal-title">{{ contants[location].title }}</h5>
             <button
               type="button"
               class="btn-close"
@@ -13,7 +13,8 @@
             ></button>
           </div>
           <div class="modal-body">
-            <HistoryInfo />
+            <HistoryInfo v-if="showHistoryInfo" />
+            <ChallengeComponent v-if="!showHistoryInfo"/>
           </div>
           <div class="modal-footer">
             <button
@@ -35,10 +36,18 @@
 
 <script>
 import HistoryInfo from './HistoryInfo.vue'
+import ChallengeComponent from './ChallengeComponent.vue'
+import ChallengeConstants from "../ChallengeConstants"
+
 export default {
   name: 'ModalComponent',
+  data() {
+    return {
+    };
+  },
   components: {
-    HistoryInfo
+    HistoryInfo,
+    ChallengeComponent,
   },
   props: {
     title: String,
@@ -46,16 +55,29 @@ export default {
   computed: {
     showModal() {
       return this.$store.getters.showModal
+    },
+    showHistoryInfo() {
+      return this.$store.getters.showHistoryInfo
+    },
+    location() {
+      return this.$store.getters.location
+    },
+    contants() {
+      return ChallengeConstants;
     }
   },
   methods:{
     closeModal() {
-    this.$store.commit('setShowModal', false)
-  }}
+      this.$store.commit('setShowModal', false)
+    },
+    setShowHistoryInfo(show) {
+      this.$store.commit('setShowHistoryInfo', show)
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
   .modal {
     display: unset !important;
   }
