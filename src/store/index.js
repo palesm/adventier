@@ -1,22 +1,21 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 const store = createStore({
-  state () {
+  state() {
     return {
       showModal: false,
       showHistoryInfo: false,
-      location: '',
+      location: "",
       PlayerStats: {
         name: "Myname",
         items: [
-          "Lókaki",
-          "GoblinHere",
-          "Hős péncél",
-          "NonBinary kard"
+          //dump
+          "Lókaki", "GoblinHere", "Hős péncél", "NonBinary kard"
+          //S(l)ay the dragon
         ],
         Badges: [
-          "Butcher",
-          "GnomeKiller"
+          "Butcher", "GnomeKiller"
+        
         ],
         Might: 10,
         Wit: 10,
@@ -25,13 +24,13 @@ const store = createStore({
     }
   },
   mutations: {
-    setShowModal (state, show) {
+    setShowModal(state, show) {
       state.showModal = show;
     },
-    setShowHistoryInfo (state, show) {
+    setShowHistoryInfo(state, show) {
       state.showHistoryInfo = show;
     },
-    setLocation (state, location) {
+    setLocation(state, location) {
       state.location = location;
     },
     setName (state, name) {
@@ -51,14 +50,14 @@ const store = createStore({
     }
   },
   getters: {
-    showModal (state) {
-      return state.showModal
+    showModal(state) {
+      return state.showModal;
     },
-    showHistoryInfo (state) {
-      return state.showHistoryInfo
+    showHistoryInfo(state) {
+      return state.showHistoryInfo;
     },
-    location (state) {
-      return state.location
+    location(state) {
+      return state.location;
     },
     
     getName (state) {
@@ -80,6 +79,6 @@ const store = createStore({
       return state.PlayerStats.Badges
     }
   }
-})
+});
 
 export default store;
