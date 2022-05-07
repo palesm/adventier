@@ -1,7 +1,7 @@
 pipeline {
   agent {
     kubernetes {
-      yamlmlFile 'k8s/jenkins-agent.yaml'
+      yamlFile 'k8s/jenkins-agent.yaml'
       defaultContainer 'docker'
       //idleMinutes 60
     }
@@ -16,27 +16,21 @@ pipeline {
             sh 'docker buildx create  --driver kubernetes --name builder --node arm64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=arm64 --use'
             sh 'docker buildx create --append --driver kubernetes --name builder --node amd64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=amd64 --use'
             sh 'docker buildx build -t ${IMAGEREPO}/${IMAGETAG} --platform linux/arm64,linux/amd64 --push . '
-            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.yaml
-            ml'
+            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.yaml'
           }
      }
 
     stage('deploy ') {
       steps {
         sh '''
-        cp -i k8s/deployment.yaml
-        ml k8s/deployment.yaml
-        ml
+        cp -i k8s/deployment.yaml k8s/deployment.yaml
+
         sed -i "s/BRANCHNAME/${BRANCH_NAME_LC}/" k8s/deployment.yaml
-        ml
-        sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yyaml
-        mlaml
+        sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yaml
         '''
-        sh 'cat k8s/deployment.yaml
-        ml'
+        sh 'cat k8s/deployment.yaml'
         container(name: 'kubectl') {
-        sh 'kubectl apply -f k8s/deployment.yaml
-        ml'
+        sh 'kubectl apply -f k8s/deployment.yaml'
         sh 'kubectl rollout status deployment/adventier --namespace=${BRANCH_NAME_LC}' 
 
         sh '''curl --location --request POST $DISCORD_URL         --header \'Content-Type: application/json\'         --data-raw \'{"content": "I am pleased to report that I am deployed the branch:** \'${BRANCH_NAME_LC}\'** and its available for you at: http://\'${BRANCH_NAME_LC}\'.adventier.klucsik.fun "}\'
