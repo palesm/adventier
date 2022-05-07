@@ -13,7 +13,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <p>Modal body text goes here.</p>
+            <HistoryInfo />
           </div>
           <div class="modal-footer">
             <button
@@ -31,9 +31,15 @@
   </div>
 </template>
 
+
+
 <script>
+import HistoryInfo from './HistoryInfo.vue'
 export default {
   name: 'ModalComponent',
+  components: {
+    HistoryInfo
+  },
   props: {
     title: String,
   },
@@ -51,6 +57,10 @@ export default {
 
 <style>
   .modal {
-    display: unset !important
+    display: unset !important;
+  }
+
+  .modal-dialog {
+    max-width: 800px !important;
   }
 </style>

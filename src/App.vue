@@ -1,22 +1,23 @@
 <template>
-  <CCMenu />
+ <div>
+  <ModalComponent title='Hello' />
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 import "bootstrap/dist/css/bootstrap.min.css"
-import CCMenu from "./components/CCMenu.vue"
-
+import ModalComponent from './components/ModalComponent'
 
 export default {
   name: 'App',
   components: {
-    CCMenu
+    ModalComponent
   }
 }
 </script>
 
 <style>
 #app {
-  text-align: center;
 }
 </style>

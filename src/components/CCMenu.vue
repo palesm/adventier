@@ -19,7 +19,7 @@
               Items: Goblin Bal Here
             </div>
           </div>
-          <a href="#" id="ZugloButton" style="margin-top: 5px">Zugló szörnye</a>
+          <a  @click="this.$router.push('/map')" id="ZugloButton" style="margin-top: 5px">Zugló szörnye</a>
           <!-- Normal on click thingie go to map -->
           <div style="margin-top: 5px; color:darkgrey; opacity: 50%;">A vár réme</div>
           <!-- Make gray and low opacity so it's not available yet -->
