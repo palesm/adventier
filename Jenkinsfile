@@ -1,7 +1,8 @@
 pipeline {
   agent {
     kubernetes {
-    File 'k8s/jenkins-agent.yml'
+      yamlFile 'k8s/jenkins-agent.ya
+      ml'
       defaultContainer 'docker'
       //idleMinutes 60
     }
@@ -16,20 +17,27 @@ pipeline {
             sh 'docker buildx create  --driver kubernetes --name builder --node arm64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=arm64 --use'
             sh 'docker buildx create --append --driver kubernetes --name builder --node amd64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=amd64 --use'
             sh 'docker buildx build -t ${IMAGEREPO}/${IMAGETAG} --platform linux/arm64,linux/amd64 --push . '
-            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.yml'
+            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.ya
+            ml'
           }
      }
 
     stage('deploy ') {
       steps {
         sh '''
-        cp -i k8s/deployment. k8s/deployment.yml
-        sed -i "s/BRANCHNAME/${BRANCH_NAME_LC}/" k8s/deployment.yml
-        sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yml
+        cp -i k8s/deployment.ya
+        ml k8s/deployment.ya
+        ml
+        sed -i "s/BRANCHNAME/${BRANCH_NAME_LC}/" k8s/deployment.ya
+        ml
+        sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yya
+        mlaml
         '''
-        sh 'cat k8s/deployment.'
+        sh 'cat k8s/deployment.ya
+        ml'
         container(name: 'kubectl') {
-        sh 'kubectl apply -f k8s/deployment.'
+        sh 'kubectl apply -f k8s/deployment.ya
+        ml'
         sh 'kubectl rollout status deployment/adventier --namespace=${BRANCH_NAME_LC}' 
 
         sh '''curl --location --request POST $DISCORD_URL         --header \'Content-Type: application/json\'         --data-raw \'{"content": "I am pleased to report that I am deployed the branch:** \'${BRANCH_NAME_LC}\'** and its available for you at: http://\'${BRANCH_NAME_LC}\'.adventier.klucsik.fun "}\'
