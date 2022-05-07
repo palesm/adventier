@@ -20,7 +20,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: adventier-svc-fe
+                name: adventier-svc
                 port:
                   number: 80
 
@@ -30,8 +30,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: birdnoise-be
-  namespace: birdnoise-BRANCHNAME
+  name: adventier
+  namespace: adventier-BRANCHNAME
 spec:
   replicas: 1
   selector:
@@ -76,7 +76,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: adventier-svc-be
+  name: adventier-svc
   namespace: adventier-BRANCHNAME
 spec:
   ports:

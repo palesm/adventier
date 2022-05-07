@@ -1,21 +1,16 @@
 <template>
-  <MapComponent />
-  <HelloWorld />
-  <ModalComponent title='Hello' />
+  <CCMenu />
 </template>
 
 <script>
-import MapComponent from './components/MapComponent.vue'
-import HelloWorld from './components/HelloWorld.vue'
-import ModalComponent from './components/ModalComponent.vue'
 import "bootstrap/dist/css/bootstrap.min.css"
+import CCMenu from "./components/CCMenu.vue"
+
 
 export default {
   name: 'App',
   components: {
-    MapComponent,
-    HelloWorld,
-    ModalComponent
+    CCMenu
   }
 }
 </script>
@@ -24,5 +19,6 @@ export default {
 #app {
   height: 480px;
   background-image: url('@/assets/map.png');
+  text-align: center;
 }
 </style>
