@@ -18,6 +18,8 @@
             <ChallengeComponent v-if="!showHistoryInfo" :key="`challenge-${location}`"/>
           </div>
           <div class="modal-footer">
+            <button v-if="!showHistoryInfo" @click="setShowHistoryInfo(true)" class="btn btn-primary">Show history info</button>
+            <button v-if="showHistoryInfo"  @click="setShowHistoryInfo(false)" class="btn btn-primary">Back to challenge</button>
             <button
               type="button"
               class="btn btn-secondary"
@@ -70,7 +72,7 @@ export default {
     },
     setShowHistoryInfo(show) {
       this.$store.commit('setShowHistoryInfo', show)
-    }
+    },
   }
 }
 </script>

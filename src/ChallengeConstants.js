@@ -1,4 +1,15 @@
 const ChallengeConstants = {
+  end: {
+    title: "Challenge at this location ended",
+    //wiki data
+    wikiInfo: ``,
+    photo: '@assets/heroes-sqr',
+    //challenge data
+    question: "close this modal",
+    answers: [],
+    resolutions: [],
+    scenePhoto: '@assets/heroes-sqr',
+  },
   heroes: {
     title: "Hősök tere",
     //wiki data
@@ -28,7 +39,9 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     photo: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
-    answers: ["naná", "persze", "hogyne"]
+    answers: ["naná", "persze", "hogyne"],
+    resolutions: ["ügyi voltál", "meghaltál", "szexelhetsz a sárkánnyal"],
+    nextModal: ["end","end", "end" ],
   },
   bazilika: {
     title: "Szent István Bazilika",
@@ -43,6 +56,7 @@ const ChallengeConstants = {
     photo: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
     answers: ["naná", "persze", "hogyne"],
+    resolutions: ["naná", "persze", "hogyne"],
     condition: {
       answerNumber: 0,
       
