@@ -47,7 +47,7 @@ pipeline {
                                    ).trim()}"""
     IMAGETAG = """${sh(
                                   script:
-                                    "BRANCH_NAME_LC=\$(echo $BRANCH_NAME | sed -e 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/') echo adventier_$BRANCH_NAME_LC:$VERSION",
+                                    "BRANCH_NAME_LC=\$(echo $BRANCH_NAME | sed -e 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/') echo adventier_$BRANCH_NAME_LC:latest",
                                   returnStdout:true
                                   ).trim()}"""
       IMAGEREPO = 'registry.klucsik.fun'
