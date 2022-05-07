@@ -24,7 +24,6 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary" @click="closeModal">Close</button>
           </div>
         </div>
       </div>
