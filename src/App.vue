@@ -1,29 +1,29 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <CCMenu name=Én />
+  <CCMenu name="ÉN" />
+  <MapComponent />
+  <HelloWorld />
+  <ModalComponent title='Hello' />
+
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import MapComponent from './components/MapComponent.vue'
+import ModalComponent from './components/ModalComponent.vue'
+import "bootstrap/dist/css/bootstrap.min.css"
+import HelloWorld from './components/HelloWorld.vue'
 import CCMenu from './components/CCMenu.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    HelloWorld,
+    MapComponent,
+    ModalComponent,
     CCMenu
-}
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  /* margin-top: 60px; */
-}
+#app {}
 </style>

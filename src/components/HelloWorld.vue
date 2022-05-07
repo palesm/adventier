@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ doneTodosCount }}</h1>
+  <button type="button" class="btn btn-primary" @click='showModal'>show modal!</button>
   </div>
 </template>
 
@@ -11,29 +11,18 @@ export default {
     msg: String
   },
   computed: {
-    doneTodosCount () {
-      debugger
-    return this.$store.getters.doneTodosCount
-    // return 2
-  }
+    doneTodosCount() {
+      return this.$store.getters.doneTodosCount
+    },
+  },
+  methods: {
+    showModal() {
+      this.$store.commit('setShowModal', true)
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
