@@ -3,7 +3,7 @@
     <div class="parent">
       <div class="description">{{ constants[location].question }}</div>
       <div v-for="(answer, index) in constants[location].answers" :key="`answer-${index}`">
-        <button>answer</button>
+        <button>{{answer}}</button>
       </div>
       <div class="vr"></div>
       <div>
