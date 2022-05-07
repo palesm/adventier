@@ -1,20 +1,28 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <button type="button" class="btn btn-primary" @click='showModal'>show modal!</button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'MapComponent',
-   data() {
+  name: "MapComponent",
+  data() {
     return {
-      src: "../assets/map.png"
+    };
+  },
+  methods: {
+    showModal() {
+      this.$store.commit('setShowModal', true)
     }
   }
-}
+};
 </script>
 
-<style>
-
-.container {
- 
-}</style>
+<style scoped>
+  .container {
+    height: 480px;
+    background-image: url("@/assets/map.png");
+    text-align: center;
+  }
+</style>

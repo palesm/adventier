@@ -4,7 +4,7 @@
       <h1>{{ name }}</h1>
       <h2 style="padding-top: 10px;">Nearby cities</h2>
       <div class="ShowHide">
-        <div><span style="padding-right: 10px; font-size: 22px;">Budapest</span><button id="BudapestButton">\/</button>
+        <div><span style="padding-right: 10px; font-size: 22px;">Budapest</span><button id="BudapestButton"  @click="onBpClick">\/</button>
         </div>
         <div id="Budapest" style="margin-top: 0px;display: none;">
           <div style="color: green;">
@@ -18,7 +18,7 @@
               Items: Goblin Bal Here
             </div>
           </div>
-          <a href="#" id="ZugloButton" style="margin-top: 5px">Zugló szörnye</a>
+          <a  @click="this.$router.push('/map')" id="ZugloButton" style="margin-top: 5px">Zugló szörnye</a>
           <!-- Normal on click thingie go to map -->
           <div style="margin-top: 5px; color:darkgrey; opacity: 50%;">A vár réme</div>
           <!-- Make gray and low opacity so it's not available yet -->
@@ -33,15 +33,6 @@
 var BpHidden = true;
 var UjpestHidden = true;
 window.onload = function () {
-  document.getElementById("BudapestButton").onclick = function () {
-    if (BpHidden == false) {
-      document.getElementById("Budapest").style.display = "none"; //Make it disappear
-      BpHidden = true;
-    } else {
-      document.getElementById("Budapest").style.display = "inline"; //Make it appear
-      BpHidden = false;
-    }
-  }
   document.getElementById("UjpestButton").onclick = function () {
     if (UjpestHidden == false) {
       document.getElementById("Ujpest").style.display = "none"; //Make it disappear
@@ -67,7 +58,18 @@ export default {
   },
   components: {
     AdvenTIERmap
-}
+  },
+  methods: {
+    onBpClick()  {
+      if (BpHidden == false) {
+        document.getElementById("Budapest").style.display = "none"; //Make it disappear
+        BpHidden = true;
+      } else {
+        document.getElementById("Budapest").style.display = "inline"; //Make it appear
+        BpHidden = false;
+      }
+    }
+  }
 }
 </script>
 
