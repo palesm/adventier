@@ -8,10 +8,18 @@ const store = createStore({
       location: "",
       PlayerStats: {
         name: "Myname",
-        items: ["Lókaki", "GoblinHere", "Hős péncél", "NonBinary kard"],
-        Badges: ["Butcher", "GnomeKiller"],
-        Str: 10,
-        Def: 10,
+        items: [
+          //dump
+          "Lókaki", "GoblinHere", "Hős péncél", "NonBinary kard"
+          //S(l)ay the dragon
+        ],
+        Badges: [
+          "Butcher", "GnomeKiller"
+        
+        ],
+        might: 0,
+        wit: 0,
+        const:0
       },
     };
   },
@@ -31,11 +39,14 @@ const store = createStore({
     AddItem(state, item) {
       state.items.add(item);
     },
-    ModifyStr(state, modifyBy) {
-      state.Str += modifyBy;
+    ModifyMight(state, modifyBy) {
+      state.Might += modifyBy;
     },
-    ModifyDef(state, modifyBy) {
-      state.Def += modifyBy;
+    ModifyWit(state, modifyBy) {
+      state.wit += modifyBy;
+    },
+    ModifyConst(state, modifyBy) {
+      state.const += modifyBy;
     },
   },
   getters: {
@@ -55,11 +66,14 @@ const store = createStore({
     getItems(state) {
       return state.PlayerStats.items;
     },
-    getStr(state) {
-      return state.PlayerStats.Str;
+    getMight(state) {
+      return state.PlayerStats.might;
     },
-    getDef(state) {
-      return state.PlayerStats.Def;
+    getWit(state) {
+      return state.PlayerStats.wit;
+    },
+    getConst(state) {
+      return state.PlayerStats.const;
     },
     getBadges(state) {
       return state.PlayerStats.Badges;
