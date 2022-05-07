@@ -31,7 +31,7 @@ pipeline {
         sh 'cat k8s/deployment.yaml'
         container(name: 'kubectl') {
         sh 'kubectl apply -f k8s/deployment.yaml'
-        sh 'kubectl rollout status deployment/adventier --namespace=${BRANCH_NAME_LC}' 
+        sh 'kubectl rollout status deployment/adventier --namespace=adventier-${BRANCH_NAME_LC}' 
 
         sh '''curl --location --request POST $DISCORD_URL         --header \'Content-Type: application/json\'         --data-raw \'{"content": "I am pleased to report that I am deployed the branch:** \'${BRANCH_NAME_LC}\'** and its available for you at: http://\'${BRANCH_NAME_LC}\'.adventier.klucsik.fun "}\'
         '''
