@@ -1,19 +1,23 @@
 <template>
-  <div v-if="constants">
+  <div>
     <div class="parent">
       <div class="description">{{ constants[location].question }}</div>
       <div
         v-for="(answer, index) in constants[location].answers"
         :key="`answer-${index}`"
       >
-        <button>{{ answer }}</button>
+        <button @click="answerQuestion(index)" :disabled="isAnswered">
+          {{ answer }}
+        </button>
       </div>
       <div class="vr"></div>
       <div>
         <img src="../assets/heroes-sqr.jpg" />
       </div>
     </div>
-    <button @click="setShowHistoryInfo(true)">Show history info</button>
+  </div>
+  <div v-if="resolution">
+    {{ resolution }}
   </div>
 </template>
 
@@ -22,12 +26,19 @@ import ChallengeConstants from "../ChallengeConstants";
 
 export default {
   name: "ChallengeComponent",
+  data() {
+    return {
+      resolution: null,
+      isAnswered: false,
+    };
+  },
   methods: {
     closeModal() {
       this.$store.commit("setShowModal", false);
     },
-    setShowHistoryInfo(show) {
-      this.$store.commit("setShowHistoryInfo", show);
+    answerQuestion(index) {
+      this.resolution = this.constants[this.location].resolutions[index];
+      this.isAnswered = true;
     },
   },
   computed: {
