@@ -1,6 +1,7 @@
 const ChallengeConstants = {
   heroes: {
     title: "Hősök tere",
+    //wiki data
     wikiInfo: `Hősök tere (Hungarian pronunciation: [ˈhøːʃøk ˈtɛrɛ]), lit. Heroes'
     Square, is one of the major squares in Budapest, Hungary, noted for its
     iconic Millennium Monument with statues featuring the Seven chieftains of
@@ -10,8 +11,10 @@ const ChallengeConstants = {
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
     photo: '@assets/heroes-sqr',
+    //challenge data
     question: "meghágod-e a sárkányt?",
-    answers: ["naná", "persze", "hogyne"]
+    answers: ["naná", "persze", "hogyne"],
+    scenePhoto: '@assets/heroes-sqr',
   },
   halaszbastya: {
     title: "Halászbástya",
@@ -25,9 +28,7 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     photo: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
-    answer1: "naná",
-    answer2: "hogyne",
-    answer3: "persze"
+    answers: ["naná", "persze", "hogyne"]
   },
   bazilika: {
     title: "Szent István Bazilika",
@@ -41,9 +42,11 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     photo: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
-    answer1: "naná",
-    answer2: "hogyne",
-    answer3: "persze"
+    answers: ["naná", "persze", "hogyne"],
+    condition: {
+      answerNumber: 0,
+      
+    }
   },
   parlament: {
     title: "Parlament",
@@ -57,9 +60,7 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     photo: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
-    answer1: "naná",
-    answer2: "hogyne",
-    answer3: "persze"
+    answers: ["naná", "persze", "hogyne"]
   },
   budavar: {
     title: "Budavári Palota",
@@ -73,9 +74,7 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     photo: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
-    answer1: "naná",
-    answer2: "hogyne",
-    answer3: "persze"
+   answers: ["naná", "persze", "hogyne"]
   }
 
 }
