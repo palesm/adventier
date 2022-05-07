@@ -4,17 +4,18 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">{{ contants[location].title }}</h5>
+            <h5 class="modal-title">{{ constants[location].title }}</h5>
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
+              @click="closeModal"
             ></button>
           </div>
           <div class="modal-body">
             <HistoryInfo v-if="showHistoryInfo" />
-            <ChallengeComponent v-if="!showHistoryInfo"/>
+            <ChallengeComponent v-if="!showHistoryInfo" :key="`challenge-${location}`"/>
           </div>
           <div class="modal-footer">
             <button
@@ -49,9 +50,6 @@ export default {
     HistoryInfo,
     ChallengeComponent,
   },
-  props: {
-    title: String,
-  },
   computed: {
     showModal() {
       return this.$store.getters.showModal
@@ -62,7 +60,7 @@ export default {
     location() {
       return this.$store.getters.location
     },
-    contants() {
+    constants() {
       return ChallengeConstants;
     }
   },

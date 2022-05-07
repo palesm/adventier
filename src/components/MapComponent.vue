@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <button type="button" class="btn btn-primary" @click='showModal'>show modal!</button>
-    <i class="fa-solid fa-magnifying-glass"></i>
     <span>
       <font-awesome-icon icon="magnifying-glass" @click="iconClicked(heroes)" />
       <font-awesome-icon icon="magnifying-glass" @click="iconClicked(halaszbastya)" />
