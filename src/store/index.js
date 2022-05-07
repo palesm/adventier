@@ -18,8 +18,9 @@ const store = createStore({
           "Butcher",
           "GnomeKiller"
         ],
-        Str: 10,
-        Def: 10
+        Might: 10,
+        Wit: 10,
+        Constitution: 10
       }
     }
   },
@@ -34,16 +35,19 @@ const store = createStore({
       state.location = location;
     },
     setName (state, name) {
-      state.name = name;
+      state.PlayerStats.name = name;
     },
     AddItem (state, item) {
-      state.items.add(item);
+      state.PlayerStats.items.add(item);
     },
-    ModifyStr(state, modifyBy) {
-      state.Str += modifyBy;
+    ModifyMight(state, modifyBy) {
+      state.PlayerStats.Might += modifyBy;
     },
-    ModifyDef(state, modifyBy) {
-      state.Def += modifyBy;
+    ModifyWit(state, modifyBy) {
+      state.PlayerStats.Wit += modifyBy;
+    },
+    ModifyConstitution(state, modifyBy) {
+      state.PlayerStats.Constitution += modifyBy;
     }
   },
   getters: {
@@ -63,11 +67,14 @@ const store = createStore({
     getItems (state) {
       return state.PlayerStats.items
     },
-    getStr (state) {
-      return state.PlayerStats.Str
+    getMight (state) {
+      return state.PlayerStats.Might
     },
-    getDef (state) {
-      return state.PlayerStats.Def
+    getWit (state) {
+      return state.PlayerStats.Wit
+    },
+    getConstitution (state) {
+      return state.PlayerStats.Constitution
     },
     getBadges (state) {
       return state.PlayerStats.Badges
