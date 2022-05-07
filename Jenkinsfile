@@ -23,7 +23,7 @@ pipeline {
     stage('deploy ') {
       steps {
         sh '''
-        cp -i k8s/deployment.yaml k8s/deployment.yaml
+        cp -i k8s/adventier-deployment.yaml k8s/deployment.yaml
 
         sed -i "s/BRANCHNAME/${BRANCH_NAME_LC}/" k8s/deployment.yaml
         sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yaml
