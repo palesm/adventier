@@ -1,13 +1,20 @@
 <template>
-  <div>
-    <img src="../assets/map.png">
-  </div>
+  <div class="container"></div>
 </template>
 
 <script>
 export default {
-  name: 'MapComponent'
+  name: 'MapComponent',
+   data() {
+    return {
+      src: "../assets/map.png"
+    }
+  }
 }
 </script>
 
-<style></style>
+<style>
+
+.container {
+ 
+}</style>

@@ -22,5 +22,7 @@ export default {
 
 <style>
 #app {
+  height: 480px;
+  background-image: url('@/assets/map.png');
 }
 </style>

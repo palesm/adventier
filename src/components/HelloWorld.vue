@@ -11,9 +11,6 @@ export default {
     msg: String
   },
   computed: {
-    doneTodosCount() {
-      return this.$store.getters.doneTodosCount
-    },
   },
   methods: {
     showModal() {
