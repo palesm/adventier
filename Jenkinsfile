@@ -19,7 +19,6 @@ pipeline {
             sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.yaml'
           }
      }
-    }
 
     stage('deploy ') {
       steps {
