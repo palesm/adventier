@@ -3,12 +3,12 @@ const ChallengeConstants = {
     title: "Challenge at this location ended",
     //wiki data
     wikiInfo: ``,
-    photo: '@assets/heroes-sqr',
+    challengePhoto: '@assets/heroes-sqr',
     //challenge data
     question: "close this modal",
     answers: [],
     resolutions: [],
-    scenePhoto: '@assets/heroes-sqr',
+    wikiPhoto: '@assets/heroes-sqr',
   },
   heroes: {
     title: "Hősök tere",
@@ -21,11 +21,11 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    photo: '@assets/heroes-sqr',
+    challengePhoto: '@assets/heroes-sqr',
     //challenge data
     question: "meghágod-e a sárkányt?",
     answers: ["naná", "persze", "hogyne"],
-    scenePhoto: '@assets/heroes-sqr',
+    wikiPhoto: '@assets/heroes-sqr',
   },
   bazilika2: {
     title: "Szent István Bazilika",
@@ -37,7 +37,7 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    photo: '@assets/heroes-sqr',
+    challengePhoto: '@assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
     answers: ["naná", "persze", "hogyne"],
     resolutions: ["ügyi voltál", "meghaltál", "szexelhetsz a sárkánnyal"],
@@ -53,10 +53,10 @@ const ChallengeConstants = {
     Budapest, Hungary. Needless to say, there used to be real castle walls
      where now you can take fantastic photos from, but the present day 
      structure has never served as an actual fortification in Buda.`,
-    photo: '@assets/fuligjimmy',
+    challengePhoto: '@assets/fuligjimmy',
     question: "feladat",
     password: "pw",
-    scenePhoto: '@assets/fisherman'
+    wikiPhoto: '@assets/fisherman'
   },
   bazilika: {
     title: "St. Stephen Basilica",
@@ -69,10 +69,10 @@ const ChallengeConstants = {
           co-cathedral of the Roman Catholic Archdiocese of 
           Esztergom-Budapest. Today, it is the third largest church 
           building in present-day Hungary.`,
-          photo: '@assets/senkialfonz',
+          challengePhoto: '@assets/senkialfonz',
           question: "feladat",
           password: "pw",
-          scenePhoto: '@assets/ststephen'
+          wikiPhoto: '@assets/ststephen'
   },
   parlament: {
     title: "Parlament",
@@ -82,10 +82,10 @@ const ChallengeConstants = {
       its location,[5] is the seat of the National Assembly of Hungary, 
       a notable landmark of Hungary, and a popular tourist destination 
       in Budapest.`,
-    photo: '@assets/piszkosfred',
+    challengePhoto: '@assets/piszkosfred',
     question: "feladat",
     password: "pw",
-    scenePhoto: '@assets/parlament'
+    wikiPhoto: '@assets/parlament'
   },
   budavar: {
     title: "Budavári Palota",
@@ -94,10 +94,10 @@ const ChallengeConstants = {
      in Budapest. It was first completed in 1265, although the massive 
      Baroque palace today occupying most of the site was built between
       1749 and 1769.`,
-      photo: '@assets/piszkosfred',
+      challengePhoto: '@assets/piszkosfred',
       question: "feladat",
       password: "pw",
-      scenePhoto: '@assets/parlament'
+      wikiPhoto: '@assets/parlament'
   }
 
 }
