@@ -12,7 +12,7 @@
       </div>
       <div class="vr"></div>
       <div>
-        <img src="../assets/heroes-sqr.jpg" />
+        <img :src="src" />
       </div>
     </div>
   </div>
@@ -48,6 +48,9 @@ export default {
     constants() {
       return ChallengeConstants;
     },
+    src() {
+      return this.constants[this.location].challengePhoto
+    }
   },
 };
 </script>
