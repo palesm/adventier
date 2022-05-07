@@ -16,7 +16,7 @@ pipeline {
             sh 'docker buildx create  --driver kubernetes --name builder --node arm64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=arm64 --use'
             sh 'docker buildx create --append --driver kubernetes --name builder --node amd64node  --driver-opt replicas=1,nodeselector=kubernetes.io/arch=amd64 --use'
             sh 'docker buildx build -t ${IMAGEREPO}/${IMAGETAG} --platform linux/amd64 --push . '
-            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/deployment.yaml'
+            sh 'sed -i "s/JENKINS_WILL_CHANGE_THIS_WHEN_REDEPLOY_NEEDED_BASED_ON_CHANGE/$(date)/" k8s/adventier-deployment.yaml'
           }
      }
 
