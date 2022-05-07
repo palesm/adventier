@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ doneTodosCount }}</h1>
+  <button type="button" class="btn btn-primary" @click='showModal'>show modal!</button>
   </div>
 </template>
 
@@ -11,11 +11,14 @@ export default {
     msg: String
   },
   computed: {
-    doneTodosCount () {
-      debugger
-    return this.$store.getters.doneTodosCount
-    // return 2
-  }
+    doneTodosCount() {
+      return this.$store.getters.doneTodosCount
+    },
+  },
+  methods: {
+    showModal() {
+      this.$store.commit('setShowModal', true)
+    }
   }
 }
 </script>

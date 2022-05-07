@@ -8,19 +8,26 @@ const store = createStore({
       todos: [
         { id: 1, text: '...', done: true },
         { id: 2, text: '...', done: false }
-      ]
+      ],
+      showModal: false
     }
   },
   mutations: {
     increment (state) {
       state.count++
+    },
+    setShowModal (state, show) {
+      state.showModal = show;
     }
   },
   getters: {
     doneTodosCount (state) {
-      debugger
       return state.todos.filter(todo => todo.done)
-    }
+    },
+    showModal (state) {
+      return state.showModal
+    },
+
   }
 })
 
