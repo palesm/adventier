@@ -30,8 +30,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: birdnoise-be
-  namespace: birdnoise-BRANCHNAME
+  name: adventier
+  namespace: adventier-BRANCHNAME
 spec:
   replicas: 1
   selector:
