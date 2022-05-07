@@ -6,7 +6,9 @@
         v-for="(answer, index) in constants[location].answers"
         :key="`answer-${index}`"
       >
-        <button @click="answerQuestion(index)" :disabled="isAnswered">{{ answer }}</button>
+        <button @click="answerQuestion(index)" :disabled="isAnswered">
+          {{ answer }}
+        </button>
       </div>
       <div class="vr"></div>
       <div>
@@ -24,20 +26,20 @@ import ChallengeConstants from "../ChallengeConstants";
 
 export default {
   name: "ChallengeComponent",
-   data() {
+  data() {
     return {
       resolution: null,
-      isAnswered: false
+      isAnswered: false,
     };
-   },
+  },
   methods: {
     closeModal() {
       this.$store.commit("setShowModal", false);
     },
     answerQuestion(index) {
       this.resolution = this.constants[this.location].resolutions[index];
-      this.isAnswered = true
-    }
+      this.isAnswered = true;
+    },
   },
   computed: {
     location() {
