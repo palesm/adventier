@@ -37,7 +37,7 @@ pipeline {
         }
       }
     }
-
+  }
   environment {
     VERSION = """${sh(
                                      script:
@@ -72,5 +72,4 @@ pipeline {
         }
       }
   }
-}
 }
