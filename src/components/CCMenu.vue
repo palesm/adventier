@@ -4,11 +4,12 @@
       <h1>{{ name }}</h1>
       <h2 style="padding-top: 10px;">Nearby cities</h2>
       <div class="ShowHide">
-        <div><span style="padding-right: 10px; font-size: 22px;">Budapest</span><button id="BudapestButton">\/</button>
+        <div><span style="padding-right: 10px; font-size: 22px;">Budapest</span><button @click="onBpClick">\/</button>
         </div>
         <div id="Budapest" style="margin-top: 0px;display: none;">
           <div style="color: green;">
-            <div style="margin-top: 5px">Újpest felszabadítása <button id="UjpestButton">\/</button></div>
+            <div style="margin-top: 5px">Újpest felszabadítása <button @click="onUjClick" id="UjpestButton">\/</button>
+            </div>
             <!-- Make look züd and az mint budapestnél -->
             <div id="Ujpest" style="display: none; font-size: 10px;">
               Team: Újpesti Barmok
@@ -25,34 +26,19 @@
         </div>
       </div>
     </div>
-    <div id="MAp" style="display: none;"><AdvenTIERmap/></div>
+    <div id="MAp" style="display: none;">
+      <AdvenTIERmap />
+    </div>
   </div>
 </template>
 
 <script>
 var BpHidden = true;
 var UjpestHidden = true;
-window.onload = function () {
-  document.getElementById("BudapestButton").onclick = function () {
-    if (BpHidden == false) {
-      document.getElementById("Budapest").style.display = "none"; //Make it disappear
-      BpHidden = true;
-    } else {
-      document.getElementById("Budapest").style.display = "inline"; //Make it appear
-      BpHidden = false;
-    }
-  }
-  document.getElementById("UjpestButton").onclick = function () {
-    if (UjpestHidden == false) {
-      document.getElementById("Ujpest").style.display = "none"; //Make it disappear
-      UjpestHidden = true;
-    } else {
-      document.getElementById("Ujpest").style.display = "inline"; //Make it appear
-      UjpestHidden = false;
-    }
-  }
 
-  document.getElementById("ZugloButton").onclick = function () {
+window.onload = function () {
+
+    document.getElementById("ZugloButton").onclick = function () {
     document.getElementsByClassName("container")[0].remove();
     document.getElementById("MAp").style.display = "inline";
   }
@@ -67,7 +53,27 @@ export default {
   },
   components: {
     AdvenTIERmap
-}
+  },
+  methods: {
+    onBpClick() {
+      if (BpHidden == false) {
+        document.getElementById("Budapest").style.display = "none"; //Make it disappear
+        BpHidden = true;
+      } else {
+        document.getElementById("Budapest").style.display = "inline"; //Make it appear
+        BpHidden = false;
+      }
+    },
+    onUjClick() {
+      if (UjpestHidden == false) {
+        document.getElementById("Ujpest").style.display = "none"; //Make it disappear
+        UjpestHidden = true;
+      } else {
+        document.getElementById("Ujpest").style.display = "inline"; //Make it appear
+        UjpestHidden = false;
+      }
+    }
+  }
 }
 </script>
 
