@@ -1,42 +1,34 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 const store = createStore({
-  state () {
+  state() {
     return {
       showModal: false,
       showHistoryInfo: false,
-      location: '',
+      location: "",
       PlayerStats: {
         name: "Myname",
-        items: [
-          "Lókaki",
-          "GoblinHere",
-          "Hős péncél",
-          "NonBinary kard"
-        ],
-        Badges: [
-          "Butcher",
-          "GnomeKiller"
-        ],
+        items: ["Lókaki", "GoblinHere", "Hős péncél", "NonBinary kard"],
+        Badges: ["Butcher", "GnomeKiller"],
         Str: 10,
-        Def: 10
-      }
-    }
+        Def: 10,
+      },
+    };
   },
   mutations: {
-    setShowModal (state, show) {
+    setShowModal(state, show) {
       state.showModal = show;
     },
-    setShowHistoryInfo (state, show) {
+    setShowHistoryInfo(state, show) {
       state.showHistoryInfo = show;
     },
-    setLocation (state, location) {
+    setLocation(state, location) {
       state.location = location;
     },
-    setName (state, name) {
+    setName(state, name) {
       state.name = name;
     },
-    AddItem (state, item) {
+    AddItem(state, item) {
       state.items.add(item);
     },
     ModifyStr(state, modifyBy) {
@@ -44,35 +36,35 @@ const store = createStore({
     },
     ModifyDef(state, modifyBy) {
       state.Def += modifyBy;
-    }
+    },
   },
   getters: {
-    showModal (state) {
-      return state.showModal
+    showModal(state) {
+      return state.showModal;
     },
-    showHistoryInfo (state) {
-      return state.showHistoryInfo
+    showHistoryInfo(state) {
+      return state.showHistoryInfo;
     },
-    location (state) {
-      return state.location
+    location(state) {
+      return state.location;
     },
-    
-    getName (state) {
-      return state.PlayerStats.name
+
+    getName(state) {
+      return state.PlayerStats.name;
     },
-    getItems (state) {
-      return state.PlayerStats.items
+    getItems(state) {
+      return state.PlayerStats.items;
     },
-    getStr (state) {
-      return state.PlayerStats.Str
+    getStr(state) {
+      return state.PlayerStats.Str;
     },
-    getDef (state) {
-      return state.PlayerStats.Def
+    getDef(state) {
+      return state.PlayerStats.Def;
     },
-    getBadges (state) {
-      return state.PlayerStats.Badges
-    }
-  }
-})
+    getBadges(state) {
+      return state.PlayerStats.Badges;
+    },
+  },
+});
 
 export default store;
