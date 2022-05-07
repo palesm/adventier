@@ -26,7 +26,7 @@ pipeline {
         cp -i k8s/adventier-deployment.yaml k8s/deployment.yaml
 
         sed -i "s/BRANCHNAME/${BRANCH_NAME_LC}/" k8s/deployment.yaml
-        sed -i "s/BE_IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yaml
+        sed -i "s/IMAGETAG/${IMAGEREPO}\\/${IMAGETAG}/" k8s/deployment.yaml
         '''
         sh 'cat k8s/deployment.yaml'
         container(name: 'kubectl') {
