@@ -214,7 +214,7 @@ const ChallengeConstants = {
   Castle: {
     title: "Castle Vajdahunyad",
     wikiInfo: "TODO",
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/TODO",
     question: "The Black Dragon. Her claws deeply embedded in the stone wall as her long body wrapped around the tallest tower. She rests her head on the roof of the tower, small puffs of smoke emerges from her nostrils.\n Are you ready to face the dragon?",
     answers: [
       {
@@ -232,10 +232,10 @@ const ChallengeConstants = {
         value: 0
       }
     ],
-    nextModal: ["Dragon", "end"],
+    nextModal: ["ChallengeDragon", "end"],
     challengePhoto: ""
   },
-  Dragon: {
+  ChallengeDragon: {
     title: "Challenge the Dragon",
     question: "You decided to challenge the dragon and free the princess. Now or never.\n How do you approach?",
     answers: [
@@ -265,13 +265,52 @@ const ChallengeConstants = {
         skill: null,
         value: 0,
         condition: {key: "SecretMotive", operator: "<", value: 1}
+      },
+      {
+        buttonText: " Release the goat",
+        resolution:
+          "You engage the dragon, click next.",
+        item: null,
+        skill: null,
+        value: 0,
+        condition: {key: "SecretMotive", operator: "<", value: 1}
+      },
+      {
+        buttonText: "This dragon is Huge, like really, and has teeth as big as your sword. No princess is worth dying in vain. Flee, never to return!",
+        resolution:
+          "You flee, abadon your honor and glory. ",
+        item: null,
+        skill: null,
+        value: 0
       }
     ],
-    nextModal: ["Dragon", "end"],
-    challengePhoto: "",
-    wikiInfo: "TODO",
-    wikiPhoto: "",
-  }
+    nextModal: ["Dragon", "end","end","LayEnd","ChickenEnd"],
+    challengePhoto: "../img/towerdragon.png",
+    wikiInfo: "We don't have much accurate historical info about dragons",
+    wikiPhoto: "../img/towerdragon.png",
+  },
+  ChickenEnd: {
+    title: "You finished your AdvenTier!",
+    //wiki data
+    wikiInfo: ``,
+    wikiPhoto: "../img/chicken.png",
+    //challenge data
+    question: "You ran. But hey, at least you can live to tell the tale",
+    answers: [],
+    resolutions: [],
+    challengePhoto: "../img/chicken.png",
+  },
+  LayEnd: {
+    title: "You finished your AdvenTier!",
+    //wiki data
+    wikiInfo: ``,
+    wikiPhoto: "../img/layDragon.png",
+    //challenge data
+    question: "You got the greatest prize! The princess is safe, the townsfolk are cheering to you! You fly away on the shoulders of Parga, the great black dragon!",
+    answers: [],
+    resolutions: [],
+    challengePhoto: "../img/layDragon.png",
+  },
 };
 
 export default ChallengeConstants;
