@@ -61,11 +61,13 @@ export default {
   padding-left: 10px;
   display: inline-block;
 }
+
 .CCMenu {
   background-image: url(@/../public/img/bg.png);
   width: 100%;
   height: 335px;
 }
+
 #parent {
   /* margin-top: 15px; */
   width: 100%;
@@ -90,18 +92,19 @@ export default {
 }
 
 .RescueThePricess {
-  padding-left: 5px;
+  /* padding-left: 5px; */
   width: 100%;
   height: 70px;
   white-space: nowrap;
 }
 
 #RescueHer {
+  padding-left: 10px;
   padding-top: 1px;
   margin-right: 8px;
   display: inline-block;
   width: 40%;
-  text-align:center;
+  text-align: left;
 }
 
 .img1 {
@@ -113,7 +116,7 @@ export default {
 
 .Challange2 {
   padding-top: 5px;
-  padding-left: 20px;
+  padding-left: 10px;
   width: 100%;
   height: 75px;
   white-space: nowrap;
@@ -134,6 +137,7 @@ export default {
   text-align: center;
   padding-right: 120px;
 }
+
 .img2 {
   display: inline-block;
   width: 80px;
