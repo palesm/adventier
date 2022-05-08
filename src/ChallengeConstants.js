@@ -174,17 +174,16 @@ const ChallengeConstants = {
         buttonText: "How can one slay the dragon with one strike",
         resolution:
           "Her scales is damaged under her front right leg, one good strike, and you can easily reach the beasts heart.",
-        item: "SecretWeakness",
-        skill: null,
-        value: 0,
-        condition: {key: "Might", operator: "<", value: 1}
+        item: null,
+        skill: "SecretWeakness",
+        value: 1,
       },
       {
         buttonText: "Why the dragon kidnapped princess Matilda",
         resolution:
           "Her name is Parga and she is lonely, our princess helped a lot of maiden to find true love, and Parga seek her council",
         item: null,
-        skill: "Might",
+        skill: "SecretMotive",
         value: 1
       },
       {
@@ -192,9 +191,41 @@ const ChallengeConstants = {
         resolution:
           "She is afraid of goats, as their eyes are mirror of the evil",
         item: null,
-        skill: null,
-        value: 0
+        skill: "SecretFear",
+        value: 1
       },
+    ],
+    scenePhoto: "@assets/heroes-sqr",
+    nextModal: ["end", "end", "end"],
+  },
+  Dragon: {
+    title: "Challenge the Dragon",
+    //wiki data
+    wikiInfo: `TODO`,
+    wikiPhoto: "@assets/heroes-sqr",
+    //challenge data
+    question: `You decided to challenge the dragon and free the princess. Now or never.
+    How do you approach:    
+    `,
+    answers: [
+      {
+        buttonText: "Draw sword, yell: “Foul beast, fight me and die!” ",
+        resolution:
+          "You engage in fight with the dragon, click next.",
+        item: null,
+        skill: null,
+        value: 0,
+        condition: {}
+      },
+      {
+        buttonText: "Draw sword, approach silently. Ambush the beast while its not aware , you know where to strike.",
+        resolution:
+          "You engage in fight with the dragon, click next.",
+        item: null,
+        skill: null,
+        value: 0,
+        condition: {key: "SecretWeakness", operator: "<", value: 1}
+      }
     ],
     scenePhoto: "@assets/heroes-sqr",
     nextModal: ["end", "end", "end"],
