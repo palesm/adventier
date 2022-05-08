@@ -14,7 +14,7 @@
         >
           <button
             @click="answerQuestion(index)"
-            :disabled="isDisabledByCondition(index)"
+            :disabled="isDisabledByCondition(index) || isAnswered"
             class="btn btn-primary password-btn"
           >
             {{ answer.buttonText }}
