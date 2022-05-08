@@ -8,12 +8,12 @@
           :key="`answer-${index}`"
         >
           <button @click="answerQuestion(index)" :disabled="isAnswered">
-            {{ answer }}
+            {{ answer.buttonText }}
           </button>
         </div>
       </div>
       <div v-else>
-        <input v-model="text">
+        <input v-model="text" />
         <button @click="handlePasswordSubmit(text)" :disabled="isAnswered">
           Submit password
         </button>
@@ -27,7 +27,12 @@
   <div v-if="resolution">
     {{ resolution }}
   </div>
-  <button v-if="!constants[location].password && resolution" @click="handleNext">Next</button>
+  <button
+    v-if="!constants[location].password && resolution"
+    @click="handleNext"
+  >
+    Next
+  </button>
 </template>
 
 <script>
@@ -40,7 +45,7 @@ export default {
       resolution: null,
       answerNumber: -1,
       isAnswered: false,
-      text: '',
+      text: "",
     };
   },
   methods: {
@@ -48,9 +53,20 @@ export default {
       this.$store.commit("setShowModal", false);
     },
     answerQuestion(index) {
-      this.resolution = this.constants[this.location].resolutions[index];
+      this.resolution = this.constants[this.location].answers[index].resolution;
       this.answerNumber = index;
       this.isAnswered = true;
+      if (this.constants[this.location].answers[index].item) {
+        this.$store.commit(
+          `set${this.constants[this.location].answers[index].item}`
+        );
+      }
+      if (this.constants[this.location].answers[index].skill) {
+        this.$store.commit(
+          `set${this.constants[this.location].answers[index].skill}`,
+          this.constants[this.location].answers[index].value
+        );
+      }
     },
     handleNext() {
       this.$store.commit(
@@ -64,7 +80,7 @@ export default {
       } else {
         this.resolution = "Wrong password, try again!";
       }
-    }
+    },
   },
   computed: {
     location() {

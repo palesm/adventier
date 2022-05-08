@@ -157,15 +157,17 @@ const ChallengeConstants = {
         buttonText: "How can one slay the dragon with one strike",
         resolution:
           "Her scales is damaged under her front right leg, one good strike, and you can easily reach the beasts heart.",
-        item: null,
+        item: "SecretWeakness",
         skill: null,
+        value: 0
       },
       {
         buttonText: "Why the dragon kidnapped princess Matilda",
         resolution:
           "Her name is Parga and she is lonely, our princess helped a lot of maiden to find true love, and Parga seek her council",
         item: null,
-        skill: null,
+        skill: "Might",
+        value: 1
       },
       {
         buttonText: "Whats the dragon greatest fear",
@@ -173,6 +175,7 @@ const ChallengeConstants = {
           "She is afraid of goats, as their eyes are mirror of the evil",
         item: null,
         skill: null,
+        value: 0
       },
     ],
     scenePhoto: "@assets/heroes-sqr",
