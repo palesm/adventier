@@ -108,13 +108,31 @@ const ChallengeConstants = {
     Their might pours over you as you stand before them. Jhon Hunyadi, the champion of Christ steps forward, raising his sword, he questions you:
     "Who brought God’s voice to this land? Whom among us was crowned on the ice of Danube?"
     `,
-    answers: ["Saint Ladislas", "King Saint Stephen", "Coloman the Learned"],
+    answers:
+      [
+        {
+          buttonText: "Saint Ladislas",
+          resolution: `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
+          item: null,
+          skill: null,
+          value: 0
+        },
+        {
+          buttonText: "King Saint Stephen",
+          resolution: `"You face a great Foe, may all of our might be with You!” says John, and hands over his sword to you.`,
+          item: null,
+          skill: "Might",
+          value: 3
+        },
+        {
+          buttonText: "Coloman the Learned",
+          resolution: `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
+          item: null,
+          skill: null,
+          value: 0
+        }
+      ],
     scenePhoto: "@assets/heroes-sqr",
-    resolutions: [
-      `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
-      `"You face a great Foe, may all of our might be with You!” says John, and hands over his sword to you.`,
-      `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
-    ],
     nextModal: ["end", "end", "end"],
   },
   Chapel: {
@@ -123,19 +141,31 @@ const ChallengeConstants = {
     wikiInfo: `TODO`,
     wikiPhoto: "@assets/heroes-sqr",
     //challenge data
-    question: `The Priest offers his blessings to you as you tell him your goals.
-    `,
+    question: `The Priest offers his blessings to you as you tell him your goals.`,
     answers: [
-      "Boon of the Knight",
-      "Boon of the Scholar",
-      "Boon of the Ascetic",
+      {
+        buttonText: "Boon of the Knight",
+        resolution: "You fell stronger",
+        item: null,
+        skill: "Might",
+        value: 3
+      },
+      {
+        buttonText: "Boon of the Scholar",
+        resolution: "You fell wiser",
+        item: null,
+        skill: "Wit",
+        value: 3
+      },
+      {
+        buttonText: "Boon of the Ascetic",
+        resolution: "You feel more durable",
+        item: null,
+        skill: "Constitution",
+        value: 3
+      }
     ],
     scenePhoto: "@assets/heroes-sqr",
-    resolutions: [
-      "You fell stronger",
-      "You fell wiser",
-      "You feel more durable",
-    ],
     nextModal: ["end", "end", "end"],
   },
   Anonymus: {
@@ -181,6 +211,55 @@ const ChallengeConstants = {
     scenePhoto: "@assets/heroes-sqr",
     nextModal: ["end", "end", "end"],
   },
+  Castle: {
+    title: "Castle Vajdahunyad",
+    wikiInfo: "TODO",
+    wikiPhoto: "@assets/heroes-sqr",
+    question: "The Black Dragon. Her claws deeply embedded in the stone wall as her long body wrapped around the tallest tower. She rests her head on the roof of the tower, small puffs of smoke emerges from her nostrils.\n Are you ready to face the dragon?",
+    answers: [
+      {
+        buttonText: "yes, challenge the dragon",
+        resolution: "You decided to take action",
+        item: null,
+        skill: null,
+        value: 0
+      },
+      {
+        buttonText: "no, prepare a bit more.",
+        resolution: "You decided to geather more stuff",
+        item: null,
+        skill: null,
+        value: 0
+      }
+    ]
+  },
+  Dragon: {
+    title: "Challenge the Dragon",
+    question: "You decided to challenge the dragon and free the princess. Now or never.\n How do you approach?",
+    answers: [
+      {
+        buttonText: "Draw sword, yell: “Foul beast, fight me and die!”",
+        resolution: "The dragon’s eyes open, the beast moves surprisingly quickly. She jumps down, opens her huge jaws, fire erupts!",
+        item: null,
+        skill: null,
+        value: 0
+      },
+      {
+        buttonText: "Draw sword, approach silently. Ambush the beast while its not aware , you know where to strike.",
+        resolution: "The dragon’s eyes open, the beast moves surprisingly quickly. She jumps down, opens her huge jaws, fire erupts!",
+        item: null,
+        skill: null,
+        value: 0
+      },
+      {
+        buttonText: "Dear Parga, your smouldering eyes ignites my heart. Leave the princess and be mine!",
+        resolution: "The dragon’s eyes open, the beast moves surprisingly quickly. She jumps down, opens her huge jaws, fire erupts!",
+        item: null,
+        skill: null,
+        value: 0
+      }
+    ]
+  }
 };
 
 export default ChallengeConstants;
