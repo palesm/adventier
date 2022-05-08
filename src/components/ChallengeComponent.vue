@@ -2,7 +2,12 @@
   <div>
     <div class="parent">
       <div class="description">{{ constants[location].question }}</div>
-      <div v-if="!constants[location].password">
+      <div class="vr"></div>
+      <div>
+        <img :src="src" />
+      </div>
+    </div>
+    <div v-if="!constants[location].password">
         <div
           v-for="(answer, index) in constants[location].answers"
           :key="`answer-${index}`"
@@ -16,11 +21,6 @@
           </button>
         </div>
       </div>
-      <div class="vr"></div>
-      <div>
-        <img :src="src" />
-      </div>
-    </div>
     <div v-if="constants[location].password">
       <input v-model="text" />
       <button
@@ -131,7 +131,7 @@ img {
 }
 
 .password-btn {
-  margin-left: 1rem;
+  margin: 0.5rem;
 }
 
 
