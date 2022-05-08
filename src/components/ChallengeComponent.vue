@@ -7,7 +7,10 @@
           v-for="(answer, index) in constants[location].answers"
           :key="`answer-${index}`"
         >
-          <button @click="answerQuestion(index)" :disabled="isAnswered">
+          <button
+            @click="answerQuestion(index)"
+            :disabled="isDisabledByCondition(index)"
+          >
             {{ answer.buttonText }}
           </button>
         </div>
@@ -58,7 +61,8 @@ export default {
       this.isAnswered = true;
       if (this.constants[this.location].answers[index].item) {
         this.$store.commit(
-          `set${this.constants[this.location].answers[index].item}`
+          `set${this.constants[this.location].answers[index].item}`,
+          true
         );
       }
       if (this.constants[this.location].answers[index].skill) {
@@ -81,6 +85,20 @@ export default {
         this.resolution = "Wrong password, try again!";
       }
     },
+    isDisabledByCondition(index) {
+      const condition = this.constants[this.location].answers[index].condition;
+      if (condition) {
+        const getKey = `get${condition.key}`;
+        const userProp = this.$store.getters[getKey];
+        if (condition.operator === "<") {
+          return userProp < condition.value;
+        }
+        if (condition.operator === ">") {
+          return userProp > condition.value;
+        }
+      }
+      return false;
+    },
   },
   computed: {
     location() {
@@ -92,6 +110,21 @@ export default {
     src() {
       return this.constants[this.location].challengePhoto;
     },
+    // isDisabledByCondition(index) {
+    //   debugger;
+    //   if (index.typeOf == "number") {
+    //     const condition =
+    //       this.constants[this.location].answers[index].condition;
+    //     const userProp = `${this.$store.getters}.get${condition.key}`;
+    //     if (condition.operator === "<") {
+    //       return userProp < condition.value;
+    //     }
+    //     if (condition.operator === ">") {
+    //       return userProp > condition.value;
+    //     }
+    //   }
+    //   return false;
+    // },
   },
 };
 </script>
