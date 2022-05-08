@@ -42,7 +42,7 @@ export default {
       this.answerNumber = index;
     },
     handleNext() {
-      this.$store.commit("", this.constants[this.location].nextModal[this.answerNumber]);
+      this.$store.commit("setLocation", this.constants[this.location].nextModal[this.answerNumber]);
     }
   },
   computed: {
