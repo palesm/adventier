@@ -21,6 +21,7 @@
             />
           </div>
           <div class="modal-footer">
+          <div v-if="location !== 'end'">
             <button
               v-if="!showHistoryInfo"
               @click="setShowHistoryInfo(true)"
@@ -35,6 +36,7 @@
             >
               Back to challenge
             </button>
+          </div>
             <button
               type="button"
               class="btn btn-secondary"
