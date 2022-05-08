@@ -138,7 +138,16 @@ const ChallengeConstants = {
   Chapel: {
     title: "Chapel",
     //wiki data
-    wikiInfo: `TODO`,
+    wikiInfo: `A jáki kápolna, pontos nevén jáki Szent László-kápolna egy 20. században eredetileg nem vallási célokra épült budapesti, 
+    templomot utánzó épület. A jáki kápolna a Vajdahunyad vára része, ugyanakkor annak többi épületétől eltérően nem tartozik 
+    a Magyar Mezőgazdasági Múzeumhoz, hanem a Magyar katolikus egyház kezeli. Felépítésére a millenniumi történelmi emlékmű úgynevezett 
+    román épületcsoportja keretében került sor. Tervezője – akár csak az épületegyüttes más részeié – Alpár Ignác volt. Az épületegyüttest 
+    először 1896-ban építették fel fából és vakolatból, de 1899-re megromlott az állapota, és elbontották. A közönség körében népszerű 
+    komplexumot 1904 és 1908 között újjáépítették, utóbbi évben készült el a román épületcsoport, immár tartós alapanyagból. Eredetileg 
+    nem is vallási célból épült, hanem könyvtárnak, de 1915-ben Kohl Medárd esztergomi segédpüspök Szent László király tiszteletére 
+    felszentelte. Érdekesség, hogy 1938-ban nem kisebb személyiségek mutattak be közös szentmisét, mint az olasz Eugenio Pacelli 
+    bíboros-nuncius, a későbbi XII. Piusz pápa és Giovanni Battista Montini bíboros, a későbbi VI. Pál pápa
+    A templom jelenleg az Esztergom-Budapesti főegyházmegye kezelésében áll, alkalmanként használják vallási célokra. `,
     wikiPhoto: "../img/Chapel.png",
     //challenge data
     question: `The Priest offers his blessings to you as you tell him your goals.`,
@@ -171,7 +180,10 @@ const ChallengeConstants = {
   Anonymus: {
     title: "Anonymus",
     //wiki data
-    wikiInfo: `TODO`,
+    wikiInfo: `Anonymus, vagy Bele Regis Notarius (a. m. Béla király [Névtelen] Jegyzője; kb. a 12. század vége – 13. század eleje), 
+    krónikás és az egyik Béla nevű magyar király jegyzője (feltehetően III. Béláé, de minthogy pontos születési évét nem ismerjük, nem 
+      lehetünk bizonyosak benne[1]). Keveset tudunk róla; latinizált nevének kezdőbetűje mindenesetre P-vel kezdődik, mert magát csak „P. 
+      mester”-ként jelölte („P. dictus magister”, az általános filológiai értelmezés szerint „a mesternek mondott P.”). `,
     wikiPhoto: "../img/Anonymus.png",
     //challenge data
     question: `Before you a hooded figure, Bele Regis Notarius, 
