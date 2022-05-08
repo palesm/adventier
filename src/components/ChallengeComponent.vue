@@ -15,17 +15,17 @@
           </button>
         </div>
       </div>
-      <div v-else>
-        <input v-model="text" />
-        <button @click="handlePasswordSubmit(text)" :disabled="isAnswered">
-          Submit password
-        </button>
-      </div>
       <div class="vr"></div>
       <div>
         <img :src="src" />
       </div>
     </div>
+    <div v-if="constants[location].password">
+        <input v-model="text" />
+        <button @click="handlePasswordSubmit(text)" :disabled="isAnswered" class="btn btn-primary password-btn">
+          Submit password
+        </button>
+      </div>
   </div>
   <div v-if="resolution">
     {{ resolution }}
@@ -129,4 +129,23 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.parent {
+  display: flex;
+}
+
+img {
+  max-heigth: 200px;
+  max-width: 200px;
+  padding-left: 20px;
+}
+
+.password-btn {
+  margin-left: 1rem;
+}
+
+
+.description {
+  padding-right: 20px;
+}
+</style>

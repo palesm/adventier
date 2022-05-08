@@ -13,8 +13,7 @@ import ChallengeConstants from "../ChallengeConstants";
 
 export default {
   name: "HistoryInfo",
-  methods: {
-  },
+  methods: {},
   computed: {
     location() {
       return this.$store.getters.location;
@@ -23,12 +22,10 @@ export default {
       return ChallengeConstants;
     },
     src() {
-      return this.constants[this.location].wikiPhoto
-    }
-  }
+      return this.constants[this.location].wikiPhoto;
+    },
+  },
 };
-
-
 </script>
 
 <style>
@@ -37,7 +34,8 @@ export default {
 }
 
 img {
-  width: 300px;
+  max-heigth: 200px;
+  max-width: 200px;
   padding-left: 20px;
 }
 
