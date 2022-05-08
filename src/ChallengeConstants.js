@@ -57,6 +57,7 @@ const ChallengeConstants = {
     question: "feladat",
     password: "pw",
     scenePhoto: "@assets/fisherman",
+    nextModal: ["end", "end", "end"],
   },
   bazilika: {
     title: "St. Stephen Basilica",
