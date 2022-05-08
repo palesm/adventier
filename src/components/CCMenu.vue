@@ -35,23 +35,23 @@
 
     <div class="RescueThePricess">
       <h3 id="RescueHer" @click="this.$router.push('/map2')">Rescue The Princess</h3>
-      <img class="img1" src="./../assets/dragon1.png" alt="" width="52" height="52">
-      <img class="img1" src="./../assets/dragon2.png" alt="" width="52" height="52">
-      <img class="img1" src="./../assets/dragon3.png" alt="" width="52" height="52">
+      <img class="img1" src="./../../public/img/dragon1.png" alt="" width="52" height="52">
+      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="52" height="52">
+      <img class="img1" src="./../../public/img/dragon3.png" alt="" width="52" height="52">
     </div>
 
     <div class="Challange2">
       <h3 id="Second" @click="this.$router.push('/map')">Challange2</h3>
-      <img class="img1" src="./../assets/dragon1.png" alt="" width="52" height="52">
-      <img class="img1" src="./../assets/dragon2.png" alt="" width="52" height="52">
-      <img class="img1" src="./../assets/dragon4.png" alt="" width="52" height="52">
+      <img class="img1" src="./../../public/img/dragon1.png" alt="" width="52" height="52">
+      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="52" height="52">
+      <img class="img1" src="./../../public/img/dragon4.png" alt="" width="52" height="52">
     </div>
 
     <div class="Challange2">
       <h3 id="Third">Challange3</h3>
-      <img class="img2" src="./../assets/dragon1.png" alt="" width="52" height="52">
-      <img class="img1" src="./../assets/dragon2.png" alt="" width="52" height="52">
-      <img class="img2" src="./../assets/dragon4.png" alt="" width="52" height="52">
+      <img class="img2" src="./../../public/img/dragon1.png" alt="" width="52" height="52">
+      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="52" height="52">
+      <img class="img2" src="./../../public/img/dragon4.png" alt="" width="52" height="52">
     </div>
 
   </div>
@@ -85,7 +85,7 @@ export default {
 </script>
 <style scoped>
 .CCMenu {
-  background-image: url(@/assets/bg.png);
+  background-image: url(@/../public/img/bg.png);
   width: 100%;
   height: 480px;
 }
