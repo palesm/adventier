@@ -104,7 +104,7 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     wikiPhoto: "../img/heroes-sqr.jpg",
     //challenge data
-    question: `he greatest kings, leaders and statesman of Hungary. 
+    question: `The greatest kings, leaders and statesman of Hungary. 
     Their might pours over you as you stand before them. Jhon Hunyadi, the champion of Christ steps forward, raising his sword, he questions you:
     "Who brought God’s voice to this land?"
     `,
@@ -180,10 +180,8 @@ const ChallengeConstants = {
   Anonymus: {
     title: "Anonymus",
     //wiki data
-    wikiInfo: `Anonymus, vagy Bele Regis Notarius (a. m. Béla király [Névtelen] Jegyzője; kb. a 12. század vége – 13. század eleje), 
-    krónikás és az egyik Béla nevű magyar király jegyzője (feltehetően III. Béláé, de minthogy pontos születési évét nem ismerjük, nem 
-      lehetünk bizonyosak benne[1]). Keveset tudunk róla; latinizált nevének kezdőbetűje mindenesetre P-vel kezdődik, mert magát csak „P. 
-      mester”-ként jelölte („P. dictus magister”, az általános filológiai értelmezés szerint „a mesternek mondott P.”). `,
+    wikiInfo: `Anonymous is the name given to authors whose names have not survived. The word itself means anonymous in Latin.
+    The best known in Hungary is Anonymus, the anonymous scribe of King Béla III, author of the Gesta Hungarorum.`,
     wikiPhoto: "../img/Anonymus.png",
     //challenge data
     question: `Before you a hooded figure, Bele Regis Notarius, 
@@ -214,14 +212,25 @@ const ChallengeConstants = {
       {
         buttonText: "Whats the dragon greatest fear",
         resolution:
-          "She is afraid of goats, as their eyes are mirror of the evil",
+          "She is afraid of goats, as their eyes are mirror of the evil.",
         item: null,
         skill: "SecretFear",
         value: 1
       },
     ],
     challengePhoto: "../img/anonkerdez.png",
-    nextModal: ["end", "end", "end"],
+    nextModal: ["end", "end", "GoatForeshadow"],
+  },
+  GoatForeshadow: {
+    title: "You leave Anonymus!",
+    //wiki data
+    wikiInfo: ``,
+    wikiPhoto: "../img/goatappears.png",
+    //challenge data
+    question: "As you turn away from the scholar a goat appears in front of you. The animal chewing on sometinh and stares you. It follows you in your path from now on, always staring at you.",
+    answers: [],
+    resolutions: [],
+    challengePhoto: "../img/goatappears.png",
   },
   Castle: {
     title: "Castle Vajdahunyad",
@@ -230,14 +239,14 @@ const ChallengeConstants = {
     question: "The Black Dragon. Her claws deeply embedded in the stone wall as her long body wrapped around the tallest tower. She rests her head on the roof of the tower, small puffs of smoke emerges from her nostrils.\n Are you ready to face the dragon?",
     answers: [
       {
-        buttonText: "yes, challenge the dragon",
+        buttonText: "Yes, challenge the dragon",
         resolution: "You decided to take action",
         item: null,
         skill: null,
         value: 0
       },
       {
-        buttonText: "no, prepare a bit more.",
+        buttonText: "No, prepare a bit more.",
         resolution: "You decided to gather more stuff",
         item: null,
         skill: null,
@@ -281,11 +290,11 @@ const ChallengeConstants = {
       {
         buttonText: " Release the goat",
         resolution:
-          "You engage the dragon, click next.",
+          "The goat slowly walks toward the tower",
         item: null,
         skill: null,
         value: 0,
-        condition: {key: "SecretMotive", operator: "<", value: 1}
+        condition: {key: "SecretFear", operator: "<", value: 1}
       },
       {
         buttonText: "This dragon is Huge, like really, and has teeth as big as your sword. No princess is worth dying in vain. Flee, never to return!",
@@ -296,7 +305,7 @@ const ChallengeConstants = {
         value: 0
       }
     ],
-    nextModal: ["Dragon", "end","end","LayEnd","ChickenEnd"],
+    nextModal: ["Dragon", "end","LayEnd","GoatEnd","ChickenEnd"],
     challengePhoto: "../img/towerdragon.png",
     wikiInfo: "We don't have much accurate historical info about dragons",
     wikiPhoto: "../img/towerdragon.png",
@@ -322,6 +331,17 @@ const ChallengeConstants = {
     answers: [],
     resolutions: [],
     challengePhoto: "../img/layDragon.png",
+  },
+  GoatEnd: {
+    title: "You finished your AdvenTier!",
+    //wiki data
+    wikiInfo: ``,
+    wikiPhoto: "../img/goataco.png",
+    //challenge data
+    question: "The dragon flies away in terror! The goat bites the princess who starts to shake and scream... maybe you shouldn't have do that!",
+    answers: [],
+    resolutions: [],
+    challengePhoto: "../img/goataco.png",
   },
 };
 

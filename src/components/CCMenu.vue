@@ -10,6 +10,7 @@
       <img class="img1" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon3.png" alt="" width="26" height="26">
+      <h6 id="Team">Team: Holy Knights</h6>
     </div>
 
     <div class="Challange2" @click="this.$router.push('/map')">
@@ -56,11 +57,17 @@ export default {
 }
 </script>
 <style scoped>
+#Team {
+  padding-left: 10px;
+  display: inline-block;
+}
+
 .CCMenu {
   background-image: url(@/../public/img/bg.png);
   width: 100%;
   height: 335px;
 }
+
 #parent {
   /* margin-top: 15px; */
   width: 100%;
@@ -82,21 +89,23 @@ export default {
   display: inline-block;
   width: 45%;
   height: 100%;
+  padding-right: 5px;
 }
 
 .RescueThePricess {
-  padding-left: 5px;
+  /* padding-left: 5px; */
   width: 100%;
   height: 70px;
   white-space: nowrap;
 }
 
 #RescueHer {
+  padding-left: 10px;
   padding-top: 1px;
   margin-right: 8px;
   display: inline-block;
   width: 40%;
-  text-align:center;
+  text-align: left;
 }
 
 .img1 {
@@ -108,7 +117,7 @@ export default {
 
 .Challange2 {
   padding-top: 5px;
-  padding-left: 20px;
+  padding-left: 10px;
   width: 100%;
   height: 75px;
   white-space: nowrap;
@@ -129,6 +138,7 @@ export default {
   text-align: center;
   padding-right: 120px;
 }
+
 .img2 {
   display: inline-block;
   width: 80px;
