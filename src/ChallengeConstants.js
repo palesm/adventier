@@ -202,14 +202,25 @@ const ChallengeConstants = {
       {
         buttonText: "Whats the dragon greatest fear",
         resolution:
-          "She is afraid of goats, as their eyes are mirror of the evil",
+          "She is afraid of goats, as their eyes are mirror of the evil.",
         item: null,
         skill: "SecretFear",
         value: 1
       },
     ],
     challengePhoto: "../img/anonkerdez.png",
-    nextModal: ["end", "end", "end"],
+    nextModal: ["end", "end", "GoatForeshadow"],
+  },
+  GoatForeshadow: {
+    title: "You leave Anonymus!",
+    //wiki data
+    wikiInfo: ``,
+    wikiPhoto: "../img/goatappears.png",
+    //challenge data
+    question: "As you turn away from the scholar a goat appears in front of you. The animal chewing on sometinh and stares you. It follows you in your path from now on, always staring at you.",
+    answers: [],
+    resolutions: [],
+    challengePhoto: "../img/goatappears.png",
   },
   Castle: {
     title: "Castle Vajdahunyad",
@@ -269,11 +280,11 @@ const ChallengeConstants = {
       {
         buttonText: " Release the goat",
         resolution:
-          "You engage the dragon, click next.",
+          "The goat slowly walks toward the tower",
         item: null,
         skill: null,
         value: 0,
-        condition: {key: "SecretMotive", operator: "<", value: 1}
+        condition: {key: "SecretFear", operator: "<", value: 1}
       },
       {
         buttonText: "This dragon is Huge, like really, and has teeth as big as your sword. No princess is worth dying in vain. Flee, never to return!",
@@ -284,7 +295,7 @@ const ChallengeConstants = {
         value: 0
       }
     ],
-    nextModal: ["Dragon", "end","end","LayEnd","ChickenEnd"],
+    nextModal: ["Dragon", "end","LayEnd","GoatEnd","ChickenEnd"],
     challengePhoto: "../img/towerdragon.png",
     wikiInfo: "We don't have much accurate historical info about dragons",
     wikiPhoto: "../img/towerdragon.png",
@@ -310,6 +321,17 @@ const ChallengeConstants = {
     answers: [],
     resolutions: [],
     challengePhoto: "../img/layDragon.png",
+  },
+  GoatEnd: {
+    title: "You finished your AdvenTier!",
+    //wiki data
+    wikiInfo: ``,
+    wikiPhoto: "../img/goataco.png",
+    //challenge data
+    question: "The dragon flies away in terror! The goat bites the princess who starts to shake and scream... maybe you shouldn't have do that!",
+    answers: [],
+    resolutions: [],
+    challengePhoto: "../img/goataco.png",
   },
 };
 
