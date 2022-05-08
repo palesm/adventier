@@ -5,7 +5,7 @@
             <font-awesome-icon id="heroes" icon="magnifying-glass" @click="iconClicked(heroesSquare)" />
             <font-awesome-icon id="Chapel" icon="magnifying-glass" @click="iconClicked(Chapel)" />
             <font-awesome-icon id="Anonymus" icon="magnifying-glass" @click="iconClicked(Anonymus)" />
-            <!-- <font-awesome-icon id="var" icon="magnifying-glass" @click="iconClicked(budavar)" /> -->
+            <font-awesome-icon id="var" icon="magnifying-glass" @click="iconClicked(Castle)" />
         </span>
     </div>
 </template>
@@ -19,7 +19,7 @@ export default {
       heroesSquare: "heroesSquare",
       Chapel: "Chapel",
       Anonymus: "Anonymus",
-      budavar: "budavar",
+      Castle: "Castle",
     };
   },
     methods: {
@@ -62,5 +62,10 @@ span {
     position: absolute;
     left: 467px;
     top: 259px;
+}
+#var {
+    position: absolute;
+    left: 487px;
+    top: 344px;
 }
 </style>
