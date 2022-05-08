@@ -54,14 +54,14 @@ span {
 
 #Chapel {
     position: absolute;
-    left: 491px;
-    top: 293px;
+    left: 465px;
+    top: 252px;
 }
 
 #Anonymus {
     position: absolute;
-    left: 467px;
-    top: 259px;
+    left: 489px;
+    top: 297px;
 }
 #var {
     position: absolute;
