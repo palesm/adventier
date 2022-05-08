@@ -15,7 +15,7 @@
         <button
           @click="answerQuestion(index)"
           :disabled="isDisabledByCondition(index) || isAnswered"
-          class="btn btn-primary password-btn"
+          class="btn btn-primary password-btn v-for"
         >
           {{ answer.buttonText }}
         </button>
@@ -143,6 +143,10 @@ img {
 
 .password-btn {
   margin: 0.5rem;
+}
+
+.v-for {
+  text-align: start;
 }
 
 .description {
