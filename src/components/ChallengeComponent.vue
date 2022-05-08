@@ -10,6 +10,7 @@
           <button
             @click="answerQuestion(index)"
             :disabled="isDisabledByCondition(index)"
+            class="btn btn-primary password-btn"
           >
             {{ answer.buttonText }}
           </button>
@@ -21,11 +22,15 @@
       </div>
     </div>
     <div v-if="constants[location].password">
-        <input v-model="text" />
-        <button @click="handlePasswordSubmit(text)" :disabled="isAnswered" class="btn btn-primary password-btn">
-          Submit password
-        </button>
-      </div>
+      <input v-model="text" />
+      <button
+        @click="handlePasswordSubmit(text)"
+        :disabled="isAnswered"
+        class="btn btn-primary password-btn"
+      >
+        Submit password
+      </button>
+    </div>
   </div>
   <div v-if="resolution">
     {{ resolution }}
