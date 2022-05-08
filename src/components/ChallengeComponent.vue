@@ -2,12 +2,20 @@
   <div>
     <div class="parent">
       <div class="description">{{ constants[location].question }}</div>
-      <div
-        v-for="(answer, index) in constants[location].answers"
-        :key="`answer-${index}`"
-      >
-        <button @click="answerQuestion(index)" :disabled="isAnswered">
-          {{ answer }}
+      <div v-if="!constants[location].password">
+        <div
+          v-for="(answer, index) in constants[location].answers"
+          :key="`answer-${index}`"
+        >
+          <button @click="answerQuestion(index)" :disabled="isAnswered">
+            {{ answer }}
+          </button>
+        </div>
+      </div>
+      <div v-else>
+        <input v-model="text">
+        <button @click="handlePasswordSubmit(text)" :disabled="isAnswered">
+          Submit password
         </button>
       </div>
       <div class="vr"></div>
@@ -18,8 +26,8 @@
   </div>
   <div v-if="resolution">
     {{ resolution }}
-    <button @click="handleNext">Next</button>
   </div>
+  <button v-if="!constants[location].password && resolution" @click="handleNext">Next</button>
 </template>
 
 <script>
@@ -31,6 +39,8 @@ export default {
     return {
       resolution: null,
       answerNumber: -1,
+      isAnswered: false,
+      text: '',
     };
   },
   methods: {
@@ -40,9 +50,23 @@ export default {
     answerQuestion(index) {
       this.resolution = this.constants[this.location].resolutions[index];
       this.answerNumber = index;
+      this.isAnswered = true;
     },
     handleNext() {
-      this.$store.commit("", this.constants[this.location].nextModal[this.answerNumber]);
+      this.$store.commit(
+        "setLocation",
+        this.constants[this.location].nextModal[this.answerNumber]
+      );
+    },
+    handlePasswordSubmit(password) {
+      console.log(this.text);
+      console.log(password);
+      debugger
+      if (this.constants[this.location].password == password) {
+        this.resolution = "Good job!";
+      } else {
+        this.resolution = "Wrong password, try again!";
+      }
     }
   },
   computed: {
@@ -53,8 +77,8 @@ export default {
       return ChallengeConstants;
     },
     src() {
-      return this.constants[this.location].challengePhoto
-    }
+      return this.constants[this.location].challengePhoto;
+    },
   },
 };
 </script>
