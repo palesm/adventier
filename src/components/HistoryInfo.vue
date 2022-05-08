@@ -1,18 +1,29 @@
 <template lang="">
   <div class="parent">
-    <div class="description">historyinfo</div>
+    <div class="description">{{ constants[location].wikiInfo }}</div>
     <div class="vr"></div>
     <div>
-      <img src="../assets/heroes-sqr.jpg" />
+      <img :src="constants[location].wikiPhoto" />
     </div>
   </div>
 </template>
 
 <script>
+import ChallengeConstants from "../ChallengeConstants";
+
 export default {
   name: "HistoryInfo",
   methods: {},
+  computed: {
+    location() {
+      return this.$store.getters.location;
+    },
+    constants() {
+      return ChallengeConstants;
+    },
+  }
 };
+
 </script>
 
 <style>

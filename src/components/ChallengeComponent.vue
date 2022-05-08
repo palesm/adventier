@@ -12,12 +12,13 @@
       </div>
       <div class="vr"></div>
       <div>
-        <img src="../assets/heroes-sqr.jpg" />
+        <img :src="src" />
       </div>
     </div>
   </div>
   <div v-if="resolution">
     {{ resolution }}
+    <button @click="handleNext">Next</button>
   </div>
 </template>
 
@@ -29,7 +30,7 @@ export default {
   data() {
     return {
       resolution: null,
-      isAnswered: false,
+      answerNumber: -1,
     };
   },
   methods: {
@@ -38,8 +39,11 @@ export default {
     },
     answerQuestion(index) {
       this.resolution = this.constants[this.location].resolutions[index];
-      this.isAnswered = true;
+      this.answerNumber = index;
     },
+    handleNext() {
+      this.$store.commit("", this.constants[this.location].nextModal[this.answerNumber]);
+    }
   },
   computed: {
     location() {
@@ -48,6 +52,9 @@ export default {
     constants() {
       return ChallengeConstants;
     },
+    src() {
+      return this.constants[this.location].challengePhoto
+    }
   },
 };
 </script>

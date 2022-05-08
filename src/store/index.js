@@ -8,12 +8,20 @@ const store = createStore({
       location: "",
       PlayerStats: {
         name: "Myname",
-        items: ["Lókaki", "GoblinHere", "Hős péncél", "NonBinary kard"],
-        Badges: ["Butcher", "GnomeKiller"],
-        Str: 10,
-        Def: 10,
-      },
-    };
+        items: [
+          //dump
+          "Lókaki", "GoblinHere", "Hős péncél", "NonBinary kard"
+          //S(l)ay the dragon
+        ],
+        Badges: [
+          "Butcher", "GnomeKiller"
+        
+        ],
+        Might: 10,
+        Wit: 10,
+        Constitution: 10
+      }
+    }
   },
   mutations: {
     setShowModal(state, show) {
@@ -25,18 +33,21 @@ const store = createStore({
     setLocation(state, location) {
       state.location = location;
     },
-    setName(state, name) {
-      state.name = name;
+    setName (state, name) {
+      state.PlayerStats.name = name;
     },
-    AddItem(state, item) {
-      state.items.add(item);
+    AddItem (state, item) {
+      state.PlayerStats.items.add(item);
     },
-    ModifyStr(state, modifyBy) {
-      state.Str += modifyBy;
+    ModifyMight(state, modifyBy) {
+      state.PlayerStats.Might += modifyBy;
     },
-    ModifyDef(state, modifyBy) {
-      state.Def += modifyBy;
+    ModifyWit(state, modifyBy) {
+      state.PlayerStats.Wit += modifyBy;
     },
+    ModifyConstitution(state, modifyBy) {
+      state.PlayerStats.Constitution += modifyBy;
+    }
   },
   getters: {
     showModal(state) {
@@ -48,23 +59,26 @@ const store = createStore({
     location(state) {
       return state.location;
     },
-
-    getName(state) {
-      return state.PlayerStats.name;
+    
+    getName (state) {
+      return state.PlayerStats.name
     },
-    getItems(state) {
-      return state.PlayerStats.items;
+    getItems (state) {
+      return state.PlayerStats.items
     },
-    getStr(state) {
-      return state.PlayerStats.Str;
+    getMight (state) {
+      return state.PlayerStats.Might
     },
-    getDef(state) {
-      return state.PlayerStats.Def;
+    getWit (state) {
+      return state.PlayerStats.Wit
     },
-    getBadges(state) {
-      return state.PlayerStats.Badges;
+    getConstitution (state) {
+      return state.PlayerStats.Constitution
     },
-  },
+    getBadges (state) {
+      return state.PlayerStats.Badges
+    }
+  }
 });
 
 export default store;
