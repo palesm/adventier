@@ -37,16 +37,15 @@ const ChallengeConstants = {
     Budapest, Hungary. Needless to say, there used to be real castle walls
      where now you can take fantastic photos from, but the present day 
      structure has never served as an actual fortification in Buda.`,
-    challengePhoto: "@assets/fuligjimmy",
+    challengePhoto: "../img/fuligjimmy.png",
     question: `As you approach the Fisherman Bastion, 
     you meet with a young gentlemen, who claims to be Don Fülig di St. James. His lean,   
-      shouldered figure is matched by an adolescently smooth, yet bony and broad face. I heard
+      shouldered figure is matched by an adolescently smooth, yet bony and broad face. \n - I heard
        nothing about this so called crown, but I guess you can gather some info here.  
-       Anyway, I am just here for my knife Clues to be gathered: 
+       Anyway, I am just here for my knife \nClues to be gathered at this spot: 
        something from the view from the bastion (mock question)`,
     password: "pw",
-    wikiPhoto: "@assets/fisherman",
-    nextModal: ["end", "end", "end"],
+    wikiPhoto: "../img/fisherman.jpg",
   },
   bazilika: {
     title: "St. Stephen Basilica",
@@ -59,9 +58,14 @@ const ChallengeConstants = {
           co-cathedral of the Roman Catholic Archdiocese of 
           Esztergom-Budapest. Today, it is the third largest church 
           building in present-day Hungary.`,
-    challengePhoto: "@assets/senkialfonz",
-    wikiPhoto: "@assets/ststephen",
-    question: "feladat",
+    challengePhoto: "../img/senkialfonz.jpg",
+    wikiPhoto: "../img/ststephen.jpg",
+    question: `At the basilica you meet a very interesting. All that is 
+    known of Alfonso Nobody is that he has been forever expelled from
+     every state in the world, and has long been allowed to remain on
+      Earth only in the greatest secrecy. \nHere are many clues for your
+      investigation - they might be pointing towards a fourth person, who 
+      hasn't been in your scope yet.  `,
     password: "pw",
   },
   parlament: {
@@ -72,10 +76,18 @@ const ChallengeConstants = {
       its location,[5] is the seat of the National Assembly of Hungary, 
       a notable landmark of Hungary, and a popular tourist destination 
       in Budapest.`,
-    challengePhoto: "@assets/piszkosfred",
-    question: "",
+    challengePhoto: "../img/piszkosfred.jpg",
+    question: `He's in his fifties, with a long, dirty, coffee-coloured,
+     unkempt beard and black-fringed sasquatches. His skin is tanned and
+      wrinkled, his eyes have a small, sly glint. His face has a few 
+      large round warts, a distinctive, hawk-like nose, and a wide, 
+      curved mouth. Messy, greyish-white hairs cascading over his 
+      forehead. He could only be forced to bathe under threat of death, 
+      his tanned face guarding the date of his last ablution as a great
+       mystery. \nIf you have gathered the password from the other sites
+       Now you have won the game. CONGRATULATIONS`,
     password: "pw",
-    wikiPhoto: "/assets/parlament.jpg",
+    wikiPhoto: "../img/parlament.jpg",
   },
   budavar: {
     title: "Budavári Palota",
@@ -84,10 +96,15 @@ const ChallengeConstants = {
     in Budapest. It was first completed in 1265, although the massive 
     Baroque palace today occupying most of the site was built between
       1749 and 1769.`,
-    challengePhoto: "@assets/piszkosfred",
-    question: "",
-    password: "pw",
-    wikiPhoto: "@assets/parlament",
+    challengePhoto: "../img/tuskohopkins.jpg",
+    question: `When you arrive to this spot, you see a man who is 
+    chubby but not fat, always walking with a stumpy walk,
+     his nose is small and quite red. I have no clue about your issue, but there
+     is a nice riddle that you would like: \n What kind of room has no doors or windows?
+     \n You are at the mighty Buda Castle. You should check the the sights here, and even 
+     if you remain clueless, you might get some awesome experiences`,
+    password: "mushroom",
+    wikiPhoto: "../img/budavar.jpg",
   },
   //(S)lay the Dragon
 
