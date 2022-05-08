@@ -159,7 +159,8 @@ const ChallengeConstants = {
           "Her scales is damaged under her front right leg, one good strike, and you can easily reach the beasts heart.",
         item: "SecretWeakness",
         skill: null,
-        value: 0
+        value: 0,
+        condition: {key: "Might", operator: "<", value: 1}
       },
       {
         buttonText: "Why the dragon kidnapped princess Matilda",
