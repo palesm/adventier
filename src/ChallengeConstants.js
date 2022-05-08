@@ -39,10 +39,10 @@ const ChallengeConstants = {
      structure has never served as an actual fortification in Buda.`,
     challengePhoto: "../img/fuligjimmy.png",
     question: `As you approach the Fisherman Bastion, 
-    you meet with a young gentlemen, who claims to be Don Fülig di St. James. His lean,   
+    you meet a young gentlemen, who claims to be Don Fülig di St. James. His lean,   
       shouldered figure is matched by an adolescently smooth, yet bony and broad face. \n - I heard
        nothing about this so called crown, but I guess you can gather some info here.  
-       Anyway, I am just here for my knife \nClues to be gathered at this spot: 
+       Anyway, I am just here for my knife - \nClues to be gathered at this spot: 
        something from the view from the bastion (mock question)`,
     password: "pw",
     wikiPhoto: "../img/fisherman.jpg",
@@ -60,10 +60,10 @@ const ChallengeConstants = {
           building in present-day Hungary.`,
     challengePhoto: "../img/senkialfonz.jpg",
     wikiPhoto: "../img/ststephen.jpg",
-    question: `At the basilica you meet a very interesting. All that is 
-    known of Alfonso Nobody is that he has been forever expelled from
+    question: `At the basilica you meet a very interesting person. All that is to
+    known about Alfonso Nobody is that he has been forever expelled from
      every state in the world, and has long been allowed to remain on
-      Earth only in the greatest secrecy. \nHere are many clues for your
+      Earth only in the greatest secrecy. \nIn this spot there  are many clues for your
       investigation - they might be pointing towards a fourth person, who 
       hasn't been in your scope yet.  `,
     password: "pw",
