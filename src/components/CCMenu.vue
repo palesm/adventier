@@ -13,14 +13,14 @@
     </div>
 
     <div class="Challange2" @click="this.$router.push('/map')">
-      <h4 id="Second">Challange2</h4>
+      <h4 id="Second">Retrieve the stolen relic</h4>
       <img class="img1" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon4.png" alt="" width="26" height="26">
     </div>
 
     <div class="Challange2">
-      <h4 id="Third">Challange3</h4>
+      <h4 id="Third">The Future to be implemented</h4>
       <img class="img2" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
       <img class="img2" src="./../../public/img/dragon4.png" alt="" width="26" height="26">

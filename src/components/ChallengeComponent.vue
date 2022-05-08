@@ -38,6 +38,7 @@
   <button
     v-if="!constants[location].password && resolution"
     @click="handleNext"
+    class="btn btn-secondary"
   >
     Next
   </button>
