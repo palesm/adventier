@@ -1,57 +1,29 @@
 <template>
   <div class="CCMenu">
-    <!-- <div class="container">
-      <h1>{{ name }}</h1>
-      <h2 style="padding-top: 10px;">Nearby cities</h2>
-      <div class="ShowHide">
-        <div><span style="padding-right: 10px; font-size: 22px;">Budapest</span><button @click="onBpClick">\/</button>
-        </div>
-        <div id="Budapest" style="margin-top: 0px;display: none;">
-          <div style="color: green;">
-            <div style="margin-top: 5px">Újpest felszabadítása <button @click="onUjClick" id="UjpestButton">\/</button>
-            </div>
-             Make look züd and az mint budapestnél
-            <div id="Ujpest" style="display: none; font-size: 10px;">
-              Team: Újpesti Barmok
-              <br />
-              Badges: {{getPlayerBadges}}
-              <br />
-              Items: Goblin Bal Here
-            </div>
-          </div>
-          <a  @click="this.$router.push('/map')" id="ZugloButton" style="margin-top: 5px">Zugló szörnye</a>
-           Normal on click thingie go to map
-          <div style="margin-top: 5px; color:darkgrey; opacity: 50%;">A vár réme</div>
-        Make gray and low opacity so it's not available yet
-        </div>
-      </div>
-    </div> -->
-
-
     <div id="parent">
-      <h1 id="Title">Budapest</h1>
-      <h2 id="PName">{{ getPlayerName }}</h2>
+      <h3 id="Title">Budapest</h3>
+      <h3 id="PName">{{ getPlayerName }}</h3>
     </div>
 
-    <div class="RescueThePricess">
-      <h3 id="RescueHer" @click="this.$router.push('/map2')">Rescue The Princess</h3>
-      <img class="img1" src="./../../public/img/dragon1.png" alt="" width="52" height="52">
-      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="52" height="52">
-      <img class="img1" src="./../../public/img/dragon3.png" alt="" width="52" height="52">
+    <div class="RescueThePricess" @click="this.$router.push('/map2')">
+      <h4 id="RescueHer">Rescue The Princess</h4>
+      <img class="img1" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
+      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
+      <img class="img1" src="./../../public/img/dragon3.png" alt="" width="26" height="26">
+    </div>
+
+    <div class="Challange2" @click="this.$router.push('/map')">
+      <h4 id="Second">Challange2</h4>
+      <img class="img1" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
+      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
+      <img class="img1" src="./../../public/img/dragon4.png" alt="" width="26" height="26">
     </div>
 
     <div class="Challange2">
-      <h3 id="Second" @click="this.$router.push('/map')">Challange2</h3>
-      <img class="img1" src="./../../public/img/dragon1.png" alt="" width="52" height="52">
-      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="52" height="52">
-      <img class="img1" src="./../../public/img/dragon4.png" alt="" width="52" height="52">
-    </div>
-
-    <div class="Challange2">
-      <h3 id="Third">Challange3</h3>
-      <img class="img2" src="./../../public/img/dragon1.png" alt="" width="52" height="52">
-      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="52" height="52">
-      <img class="img2" src="./../../public/img/dragon4.png" alt="" width="52" height="52">
+      <h4 id="Third">Challange3</h4>
+      <img class="img2" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
+      <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
+      <img class="img2" src="./../../public/img/dragon4.png" alt="" width="26" height="26">
     </div>
 
   </div>
@@ -87,18 +59,17 @@ export default {
 .CCMenu {
   background-image: url(@/../public/img/bg.png);
   width: 100%;
-  height: 480px;
+  height: 335px;
 }
 #parent {
   /* margin-top: 15px; */
   width: 100%;
   height: 90px;
   white-space: nowrap;
-  overflow-x: auto;
 }
 
 #Title {
-  margin-top: 15px;
+  margin-top: 5px;
   text-align: right;
   display: inline-block;
   width: 55%;
@@ -106,7 +77,7 @@ export default {
 }
 
 #PName {
-  margin-top: 15px;
+  margin-top: 5px;
   text-align: right;
   display: inline-block;
   width: 45%;
@@ -114,15 +85,15 @@ export default {
 }
 
 .RescueThePricess {
-  padding-left: 20px;
+  padding-left: 5px;
   width: 100%;
-  height: 90px;
+  height: 70px;
   white-space: nowrap;
-  overflow-x: auto;
 }
 
 #RescueHer {
-  padding-top: 5px;
+  padding-top: 1px;
+  margin-right: 8px;
   display: inline-block;
   width: 40%;
   text-align:center;
@@ -130,39 +101,38 @@ export default {
 
 .img1 {
   display: inline-block;
-  width: 110px;
-  height: 90px;
+  width: 80px;
+  height: 70px;
   opacity: 25%;
 }
 
 .Challange2 {
-  padding-top: 10px;
+  padding-top: 5px;
   padding-left: 20px;
   width: 100%;
-  height: 100px;
+  height: 75px;
   white-space: nowrap;
-  overflow-x: auto;
 }
 
 #Second {
-  padding-top: 5px;
+  padding-top: 1px;
   display: inline-block;
   width: 40%;
   text-align: center;
-  padding-right: 100px;
+  padding-right: 120px;
 }
 
 #Third {
-  padding-top: 5px;
+  padding-top: 1px;
   display: inline-block;
   width: 40%;
   text-align: center;
-  padding-right: 100px;
+  padding-right: 120px;
 }
 .img2 {
   display: inline-block;
-  width: 110px;
-  height: 90px;
+  width: 80px;
+  height: 70px;
   opacity: 100%;
 }
 </style>
