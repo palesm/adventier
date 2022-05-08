@@ -3,7 +3,7 @@
     <div class="description">{{ constants[location].wikiInfo }}</div>
     <div class="vr"></div>
     <div>
-      <img :src="constants[location].wikiPhoto" />
+      <img :src="src" />
     </div>
   </div>
 </template>
@@ -13,7 +13,8 @@ import ChallengeConstants from "../ChallengeConstants";
 
 export default {
   name: "HistoryInfo",
-  methods: {},
+  methods: {
+  },
   computed: {
     location() {
       return this.$store.getters.location;
@@ -21,8 +22,12 @@ export default {
     constants() {
       return ChallengeConstants;
     },
+    src() {
+      return this.constants[this.location].wikiPhoto
+    }
   }
 };
+
 
 </script>
 

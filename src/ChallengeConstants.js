@@ -83,10 +83,10 @@ const ChallengeConstants = {
       its location,[5] is the seat of the National Assembly of Hungary, 
       a notable landmark of Hungary, and a popular tourist destination 
       in Budapest.`,
-    wikiPhoto: "/assets/piszkosfred.jpg",
-    question: "feladat",
+    wikiPhoto: "../img/parlament.jpg",
+    question: "feladat showphoto",
     password: "pw",
-    challengePhoto: "/assets/parlament.jpg",
+    challengePhoto: "../img/piszkosfred.jpg",
   },
   budavar: {
     title: "Budavári Palota",

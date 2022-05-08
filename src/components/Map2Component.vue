@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .container {
     height: 480px;
-    background-image: url("@/assets/map2.png");
+    background-image: url("@/../public/img/map2.png");
     max-width: 100%;
     text-align: center;
 }
