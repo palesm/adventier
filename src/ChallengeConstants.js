@@ -104,7 +104,7 @@ const ChallengeConstants = {
     Palace of Art (Műcsarnok).`,
     wikiPhoto: "../img/heroes-sqr.jpg",
     //challenge data
-    question: `he greatest kings, leaders and statesman of Hungary. 
+    question: `The greatest kings, leaders and statesman of Hungary. 
     Their might pours over you as you stand before them. Jhon Hunyadi, the champion of Christ steps forward, raising his sword, he questions you:
     "Who brought God’s voice to this land?"
     `,
@@ -180,10 +180,8 @@ const ChallengeConstants = {
   Anonymus: {
     title: "Anonymus",
     //wiki data
-    wikiInfo: `Anonymus, vagy Bele Regis Notarius (a. m. Béla király [Névtelen] Jegyzője; kb. a 12. század vége – 13. század eleje), 
-    krónikás és az egyik Béla nevű magyar király jegyzője (feltehetően III. Béláé, de minthogy pontos születési évét nem ismerjük, nem 
-      lehetünk bizonyosak benne[1]). Keveset tudunk róla; latinizált nevének kezdőbetűje mindenesetre P-vel kezdődik, mert magát csak „P. 
-      mester”-ként jelölte („P. dictus magister”, az általános filológiai értelmezés szerint „a mesternek mondott P.”). `,
+    wikiInfo: `Anonymous is the name given to authors whose names have not survived. The word itself means anonymous in Latin.
+    The best known in Hungary is Anonymus, the anonymous scribe of King Béla III, author of the Gesta Hungarorum.`,
     wikiPhoto: "../img/Anonymus.png",
     //challenge data
     question: `Before you a hooded figure, Bele Regis Notarius, 
