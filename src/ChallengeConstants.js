@@ -228,7 +228,7 @@ const ChallengeConstants = {
     scenePhoto: "@assets/heroes-sqr",
     nextModal: ["end", "end", "end"],
   },
-  Dragon: {
+  ChallengeDragon: {
     title: "Challenge the Dragon",
     //wiki data
     wikiInfo: `TODO`,
