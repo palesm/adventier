@@ -89,6 +89,7 @@ export default {
   display: inline-block;
   width: 45%;
   height: 100%;
+  padding-right: 5px;
 }
 
 .RescueThePricess {

@@ -241,14 +241,14 @@ const ChallengeConstants = {
     question: "The Black Dragon. Her claws deeply embedded in the stone wall as her long body wrapped around the tallest tower. She rests her head on the roof of the tower, small puffs of smoke emerges from her nostrils.\n Are you ready to face the dragon?",
     answers: [
       {
-        buttonText: "yes, challenge the dragon",
+        buttonText: "Yes, challenge the dragon",
         resolution: "You decided to take action",
         item: null,
         skill: null,
         value: 0
       },
       {
-        buttonText: "no, prepare a bit more.",
+        buttonText: "No, prepare a bit more.",
         resolution: "You decided to gather more stuff",
         item: null,
         skill: null,
