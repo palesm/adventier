@@ -37,7 +37,7 @@ const ChallengeConstants = {
     Budapest, Hungary. Needless to say, there used to be real castle walls
      where now you can take fantastic photos from, but the present day 
      structure has never served as an actual fortification in Buda.`,
-    challengePhoto: "../img/fuligjimmy.png",
+    challengePhoto: "../img/fuligjimmy.jpg",
     question: `As you approach the Fisherman Bastion, 
     you meet a young gentlemen, who claims to be Don Fülig di St. James. His lean,   
       shouldered figure is matched by an adolescently smooth, yet bony and broad face. \n - I heard
