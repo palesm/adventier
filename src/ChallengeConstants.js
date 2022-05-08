@@ -3,14 +3,12 @@ const ChallengeConstants = {
     title: "Challenge at this location ended",
     //wiki data
     wikiInfo: ``,
-    challengePhoto: '@assets/heroes-sqr',
-    photo: "@assets/heroes-sqr",
+    wikiPhoto: '@assets/heroes-sqr',
     //challenge data
     question: "close this modal",
     answers: [],
     resolutions: [],
-    wikiPhoto: '@assets/heroes-sqr',
-    scenePhoto: "@assets/heroes-sqr",
+    challengePhoto: '@assets/heroes-sqr',
   },
   heroes: {
     title: "Hősök tere",
@@ -23,12 +21,11 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    challengePhoto: '@assets/heroes-sqr',
+    wikiPhoto: '@assets/heroes-sqr',
     //challenge data
     question: "meghágod-e a sárkányt?",
     answers: ["naná", "persze", "hogyne"],
-    wikiPhoto: '@assets/heroes-sqr',
-    photo: "@assets/heroes-sqr",
+    challengePhoto: '@assets/heroes-sqr',
   },
   //ANDRIS
   halaszbastya: {
@@ -49,7 +46,6 @@ const ChallengeConstants = {
        something from the view from the bastion (mock question)`,
     password: "pw",
     wikiPhoto: '@assets/fisherman',
-    scenePhoto: "@assets/fuligjimmy",
     nextModal: ["end", "end", "end"],
   },
   bazilika: {
@@ -67,7 +63,6 @@ const ChallengeConstants = {
           wikiPhoto: '@assets/ststephen',
     question: "feladat",
     password: "pw",
-    scenePhoto: "/assets/ststephen.jpg",
   },
   parlament: {
     title: "Parlament",
@@ -77,10 +72,10 @@ const ChallengeConstants = {
       its location,[5] is the seat of the National Assembly of Hungary, 
       a notable landmark of Hungary, and a popular tourist destination 
       in Budapest.`,
-    wikiPhoto: "../img/parlament.jpg",
-    question: "As you approach the Fisherman Bastion, you meet with a young gentlemen, who claims to be Don Fülig di St. James. His lean,     shouldered figure is matched by an adolescently smooth, yet bony and broad face. I heard nothing about this so called crown, but I guess you can gather some info here.  Anyway, I am just here for my knife Clues to be gathered: something from the view from the bastion (mock question)",
+    challengePhoto: '@assets/piszkosfred',
+    question: "",
     password: "pw",
-    challengePhoto: "../img/piszkosfred.jpg",
+    wikiPhoto: "/assets/parlament.jpg",
   },
   budavar: {
     title: "Budavári Palota",
@@ -90,7 +85,7 @@ const ChallengeConstants = {
     Baroque palace today occupying most of the site was built between
       1749 and 1769.`,
     challengePhoto: '@assets/piszkosfred',
-    question: "feladat",
+    question: "",
     password: "pw",
     wikiPhoto: '@assets/parlament'
   },
@@ -107,7 +102,7 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    photo: "@assets/heroes-sqr",
+    wikiPhoto: "@assets/heroes-sqr",
     //challenge data
     question: `he greatest kings, leaders and statesman of Hungary. 
     Their might pours over you as you stand before them. Jhon Hunyadi, the champion of Christ steps forward, raising his sword, he questions you:
@@ -126,7 +121,7 @@ const ChallengeConstants = {
     title: "Chapel",
     //wiki data
     wikiInfo: `TODO`,
-    photo: "@assets/heroes-sqr",
+    wikiPhoto: "@assets/heroes-sqr",
     //challenge data
     question: `The Priest offers his blessings to you as you tell him your goals.
     `,
@@ -147,7 +142,7 @@ const ChallengeConstants = {
     title: "Anonymus",
     //wiki data
     wikiInfo: `TODO`,
-    photo: "@assets/heroes-sqr",
+    wikiPhoto: "@assets/heroes-sqr",
     //challenge data
     question: `Before you a hooded figure, Bele Regis Notarius, 
     the great chronicler stands. As you approach, he leans forward, 
