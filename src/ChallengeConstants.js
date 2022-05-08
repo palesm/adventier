@@ -10,23 +10,6 @@ const ChallengeConstants = {
     resolutions: [],
     challengePhoto: "@assets/heroes-sqr",
   },
-  heroes: {
-    title: "Hősök tere",
-    //wiki data
-    wikiInfo: `Hősök tere (Hungarian pronunciation: [ˈhøːʃøk ˈtɛrɛ]), lit. Heroes'
-    Square, is one of the major squares in Budapest, Hungary, noted for its
-    iconic Millennium Monument with statues featuring the Seven chieftains of
-    the Magyars and other important Hungarian national leaders, as well as the
-    Memorial Stone of Heroes, often erroneously referred as the Tomb of the
-    Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
-    next to City Park (Városliget). It hosts the Museum of Fine Arts and the
-    Palace of Art (Műcsarnok).`,
-    wikiPhoto: "@assets/heroes-sqr",
-    //challenge data
-    question: "meghágod-e a sárkányt?",
-    answers: ["naná", "persze", "hogyne"],
-    challengePhoto: "@assets/heroes-sqr",
-  },
   //ANDRIS
   halaszbastya: {
     title: "Fisherman's Bastion",
@@ -119,11 +102,11 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/heroes-sqr.jpg",
     //challenge data
     question: `he greatest kings, leaders and statesman of Hungary. 
     Their might pours over you as you stand before them. Jhon Hunyadi, the champion of Christ steps forward, raising his sword, he questions you:
-    "Who brought God’s voice to this land? Whom among us was crowned on the ice of Danube?"
+    "Who brought God’s voice to this land?"
     `,
     answers:
       [
@@ -149,7 +132,7 @@ const ChallengeConstants = {
           value: 0
         }
       ],
-    scenePhoto: "@assets/heroes-sqr",
+    challengePhoto: "../img/hunyadi.png",
     nextModal: ["end", "end", "end"],
   },
   Chapel: {
@@ -182,7 +165,7 @@ const ChallengeConstants = {
         value: 3
       }
     ],
-    scenePhoto: "@assets/heroes-sqr",
+    challengePhoto: "@assets/heroes-sqr",
     nextModal: ["end", "end", "end"],
   },
   Anonymus: {
@@ -225,7 +208,7 @@ const ChallengeConstants = {
         value: 1
       },
     ],
-    scenePhoto: "@assets/heroes-sqr",
+    challengePhoto: "../img/anonkerdez.png",
     nextModal: ["end", "end", "end"],
   },
   ChallengeDragon: {
@@ -298,7 +281,8 @@ const ChallengeConstants = {
         resolution: "The dragon’s eyes open, the beast moves surprisingly quickly. She jumps down, opens her huge jaws, fire erupts!",
         item: null,
         skill: null,
-        value: 0
+        value: 0,
+        condition: {key: "SecretWeakness", operator: "<", value: 1}
       },
       {
         buttonText: "Dear Parga, your smouldering eyes ignites my heart. Leave the princess and be mine!",
