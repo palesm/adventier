@@ -3,12 +3,12 @@ const ChallengeConstants = {
     title: "Challenge at this location ended",
     //wiki data
     wikiInfo: ``,
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/close-modal.png",
     //challenge data
     question: "close this modal",
     answers: [],
     resolutions: [],
-    challengePhoto: "@assets/heroes-sqr",
+    challengePhoto: "../img/close-modal.png",
   },
   //ANDRIS
   halaszbastya: {
