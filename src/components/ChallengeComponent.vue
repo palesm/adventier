@@ -59,9 +59,6 @@ export default {
       );
     },
     handlePasswordSubmit(password) {
-      console.log(this.text);
-      console.log(password);
-      debugger
       if (this.constants[this.location].password == password) {
         this.resolution = "Good job!";
       } else {
