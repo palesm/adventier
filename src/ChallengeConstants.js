@@ -159,7 +159,7 @@ const ChallengeConstants = {
     title: "Anonymus",
     //wiki data
     wikiInfo: `TODO`,
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/Anonymus.png",
     //challenge data
     question: `Before you a hooded figure, Bele Regis Notarius, 
     the great chronicler stands. As you approach, he leans forward, 
