@@ -17,11 +17,11 @@ const store = createStore({
           "Butcher", "GnomeKiller"
         
         ],
-        might: 0,
-        wit: 0,
-        const:0
-      },
-    };
+        Might: 10,
+        Wit: 10,
+        Constitution: 10
+      }
+    }
   },
   mutations: {
     setShowModal(state, show) {
@@ -33,21 +33,21 @@ const store = createStore({
     setLocation(state, location) {
       state.location = location;
     },
-    setName(state, name) {
-      state.name = name;
+    setName (state, name) {
+      state.PlayerStats.name = name;
     },
-    AddItem(state, item) {
-      state.items.add(item);
+    AddItem (state, item) {
+      state.PlayerStats.items.add(item);
     },
     ModifyMight(state, modifyBy) {
-      state.Might += modifyBy;
+      state.PlayerStats.Might += modifyBy;
     },
     ModifyWit(state, modifyBy) {
-      state.wit += modifyBy;
+      state.PlayerStats.Wit += modifyBy;
     },
-    ModifyConst(state, modifyBy) {
-      state.const += modifyBy;
-    },
+    ModifyConstitution(state, modifyBy) {
+      state.PlayerStats.Constitution += modifyBy;
+    }
   },
   getters: {
     showModal(state) {
@@ -59,26 +59,26 @@ const store = createStore({
     location(state) {
       return state.location;
     },
-
-    getName(state) {
-      return state.PlayerStats.name;
+    
+    getName (state) {
+      return state.PlayerStats.name
     },
-    getItems(state) {
-      return state.PlayerStats.items;
+    getItems (state) {
+      return state.PlayerStats.items
     },
-    getMight(state) {
-      return state.PlayerStats.might;
+    getMight (state) {
+      return state.PlayerStats.Might
     },
-    getWit(state) {
-      return state.PlayerStats.wit;
+    getWit (state) {
+      return state.PlayerStats.Wit
     },
-    getConst(state) {
-      return state.PlayerStats.const;
+    getConstitution (state) {
+      return state.PlayerStats.Constitution
     },
-    getBadges(state) {
-      return state.PlayerStats.Badges;
-    },
-  },
+    getBadges (state) {
+      return state.PlayerStats.Badges
+    }
+  }
 });
 
 export default store;
