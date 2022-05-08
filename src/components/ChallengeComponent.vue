@@ -2,7 +2,12 @@
   <div>
     <div class="parent">
       <div class="description">{{ constants[location].question }}</div>
-      <div v-if="!constants[location].password">
+      <div class="vr"></div>
+      <div>
+        <img :src="src" />
+      </div>
+    </div>
+    <div v-if="!constants[location].password">
         <div
           v-for="(answer, index) in constants[location].answers"
           :key="`answer-${index}`"
@@ -10,22 +15,22 @@
           <button
             @click="answerQuestion(index)"
             :disabled="isDisabledByCondition(index)"
+            class="btn btn-primary password-btn"
           >
             {{ answer.buttonText }}
           </button>
         </div>
       </div>
-      <div class="vr"></div>
-      <div>
-        <img :src="src" />
-      </div>
-    </div>
     <div v-if="constants[location].password">
-        <input v-model="text" />
-        <button @click="handlePasswordSubmit(text)" :disabled="isAnswered" class="btn btn-primary password-btn">
-          Submit password
-        </button>
-      </div>
+      <input v-model="text" />
+      <button
+        @click="handlePasswordSubmit(text)"
+        :disabled="isAnswered"
+        class="btn btn-primary password-btn"
+      >
+        Submit password
+      </button>
+    </div>
   </div>
   <div v-if="resolution">
     {{ resolution }}
@@ -110,21 +115,6 @@ export default {
     src() {
       return this.constants[this.location].challengePhoto;
     },
-    // isDisabledByCondition(index) {
-    //   debugger;
-    //   if (index.typeOf == "number") {
-    //     const condition =
-    //       this.constants[this.location].answers[index].condition;
-    //     const userProp = `${this.$store.getters}.get${condition.key}`;
-    //     if (condition.operator === "<") {
-    //       return userProp < condition.value;
-    //     }
-    //     if (condition.operator === ">") {
-    //       return userProp > condition.value;
-    //     }
-    //   }
-    //   return false;
-    // },
   },
 };
 </script>
@@ -141,7 +131,7 @@ img {
 }
 
 .password-btn {
-  margin-left: 1rem;
+  margin: 0.5rem;
 }
 
 

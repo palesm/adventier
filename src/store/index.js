@@ -7,19 +7,13 @@ const store = createStore({
       showHistoryInfo: false,
       location: "",
       PlayerStats: {
-        name: "Myname",
-        items: [
-          //dump
-          "Lókaki", "GoblinHere", "Hős péncél", "NonBinary kard"
-          //S(l)ay the dragon
-        ],
-        Badges: [
-          "Butcher", "GnomeKiller"
-        
-        ],
+        name: "CraftHacker",
         Might: 0,
         Wit: 0,
-        Constitution: 0
+        Constitution: 0,
+        SecretWeakness: 0,
+        SecretMotive: 0,
+        SecretFear: 0
       }
     }
   },
@@ -44,6 +38,15 @@ const store = createStore({
     },
     setConstitution(state, modifyBy) {
       state.PlayerStats.Constitution += modifyBy;
+    },
+    setSecretWeakness(state, modifyBy) {
+      state.PlayerStats.SecretWeakness += modifyBy;
+    },
+    setSecretMotive(state, modifyBy) {
+      state.PlayerStats.SecretMotive += modifyBy;
+    },
+    setSecretFear(state, modifyBy) {
+      state.PlayerStats.SecretFear += modifyBy;
     }
   },
   getters: {
@@ -60,9 +63,6 @@ const store = createStore({
     getName (state) {
       return state.PlayerStats.name
     },
-    getItems (state) {
-      return state.PlayerStats.items
-    },
     getMight (state) {
       return state.PlayerStats.Might
     },
@@ -72,8 +72,14 @@ const store = createStore({
     getConstitution (state) {
       return state.PlayerStats.Constitution
     },
-    getBadges (state) {
-      return state.PlayerStats.Badges
+    getSecretWeakness (state) {
+      return state.PlayerStats.SecretWeakness
+    },
+    getSecretMotive (state) {
+      return state.PlayerStats.SecretMotive
+    },
+    getSecretFear (state) {
+      return state.PlayerStats.SecretFear
     }
   }
 });

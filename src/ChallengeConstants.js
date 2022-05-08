@@ -10,23 +10,6 @@ const ChallengeConstants = {
     resolutions: [],
     challengePhoto: "@assets/heroes-sqr",
   },
-  heroes: {
-    title: "Hősök tere",
-    //wiki data
-    wikiInfo: `Hősök tere (Hungarian pronunciation: [ˈhøːʃøk ˈtɛrɛ]), lit. Heroes'
-    Square, is one of the major squares in Budapest, Hungary, noted for its
-    iconic Millennium Monument with statues featuring the Seven chieftains of
-    the Magyars and other important Hungarian national leaders, as well as the
-    Memorial Stone of Heroes, often erroneously referred as the Tomb of the
-    Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
-    next to City Park (Városliget). It hosts the Museum of Fine Arts and the
-    Palace of Art (Műcsarnok).`,
-    wikiPhoto: "@assets/heroes-sqr",
-    //challenge data
-    question: "meghágod-e a sárkányt?",
-    answers: ["naná", "persze", "hogyne"],
-    challengePhoto: "@assets/heroes-sqr",
-  },
   //ANDRIS
   halaszbastya: {
     title: "Fisherman's Bastion",
@@ -119,47 +102,77 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/heroes-sqr.jpg",
     //challenge data
     question: `he greatest kings, leaders and statesman of Hungary. 
     Their might pours over you as you stand before them. Jhon Hunyadi, the champion of Christ steps forward, raising his sword, he questions you:
-    "Who brought God’s voice to this land? Whom among us was crowned on the ice of Danube?"
+    "Who brought God’s voice to this land?"
     `,
-    answers: ["Saint Ladislas", "King Saint Stephen", "Coloman the Learned"],
-    scenePhoto: "@assets/heroes-sqr",
-    resolutions: [
-      `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
-      `"You face a great Foe, may all of our might be with You!” says John, and hands over his sword to you.`,
-      `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
-    ],
+    answers:
+      [
+        {
+          buttonText: "Saint Ladislas",
+          resolution: `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
+          item: null,
+          skill: null,
+          value: 0
+        },
+        {
+          buttonText: "King Saint Stephen",
+          resolution: `"You face a great Foe, may all of our might be with You!” says John, and hands over his sword to you.`,
+          item: null,
+          skill: "Might",
+          value: 3
+        },
+        {
+          buttonText: "Coloman the Learned",
+          resolution: `“It was King Saint Stephen. Gather all your wits together, young knight, you will need it” He seathes his sword and steps back to his original position.`,
+          item: null,
+          skill: null,
+          value: 0
+        }
+      ],
+    challengePhoto: "../img/hunyadi.png",
     nextModal: ["end", "end", "end"],
   },
   Chapel: {
     title: "Chapel",
     //wiki data
     wikiInfo: `TODO`,
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/Chapel.png",
     //challenge data
-    question: `The Priest offers his blessings to you as you tell him your goals.
-    `,
+    question: `The Priest offers his blessings to you as you tell him your goals.`,
     answers: [
-      "Boon of the Knight",
-      "Boon of the Scholar",
-      "Boon of the Ascetic",
+      {
+        buttonText: "Boon of the Knight",
+        resolution: "You fell stronger",
+        item: null,
+        skill: "Might",
+        value: 3
+      },
+      {
+        buttonText: "Boon of the Scholar",
+        resolution: "You fell wiser",
+        item: null,
+        skill: "Wit",
+        value: 3
+      },
+      {
+        buttonText: "Boon of the Ascetic",
+        resolution: "You feel more durable",
+        item: null,
+        skill: "Constitution",
+        value: 3
+      }
     ],
-    scenePhoto: "@assets/heroes-sqr",
-    resolutions: [
-      "You fell stronger",
-      "You fell wiser",
-      "You feel more durable",
-    ],
+    challengePhoto: "../img/chapelInner.png",
     nextModal: ["end", "end", "end"],
   },
   Anonymus: {
     title: "Anonymus",
     //wiki data
     wikiInfo: `TODO`,
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/Anonymus.png",
     //challenge data
     question: `Before you a hooded figure, Bele Regis Notarius, 
     the great chronicler stands. As you approach, he leans forward, 
@@ -174,17 +187,16 @@ const ChallengeConstants = {
         buttonText: "How can one slay the dragon with one strike",
         resolution:
           "Her scales is damaged under her front right leg, one good strike, and you can easily reach the beasts heart.",
-        item: "SecretWeakness",
-        skill: null,
-        value: 0,
-        condition: {key: "Might", operator: "<", value: 1}
+        item: null,
+        skill: "SecretWeakness",
+        value: 1,
       },
       {
         buttonText: "Why the dragon kidnapped princess Matilda",
         resolution:
           "Her name is Parga and she is lonely, our princess helped a lot of maiden to find true love, and Parga seek her council",
         item: null,
-        skill: "Might",
+        skill: "SecretMotive",
         value: 1
       },
       {
@@ -192,13 +204,74 @@ const ChallengeConstants = {
         resolution:
           "She is afraid of goats, as their eyes are mirror of the evil",
         item: null,
+        skill: "SecretFear",
+        value: 1
+      },
+    ],
+    challengePhoto: "../img/anonkerdez.png",
+    nextModal: ["end", "end", "end"],
+  },
+  Castle: {
+    title: "Castle Vajdahunyad",
+    wikiInfo: "TODO",
+    wikiPhoto: "@assets/heroes-sqr",
+    question: "The Black Dragon. Her claws deeply embedded in the stone wall as her long body wrapped around the tallest tower. She rests her head on the roof of the tower, small puffs of smoke emerges from her nostrils.\n Are you ready to face the dragon?",
+    answers: [
+      {
+        buttonText: "yes, challenge the dragon",
+        resolution: "You decided to take action",
+        item: null,
         skill: null,
         value: 0
       },
+      {
+        buttonText: "no, prepare a bit more.",
+        resolution: "You decided to gather more stuff",
+        item: null,
+        skill: null,
+        value: 0
+      }
     ],
-    scenePhoto: "@assets/heroes-sqr",
-    nextModal: ["end", "end", "end"],
+    nextModal: ["Dragon", "end"],
+    challengePhoto: ""
   },
+  Dragon: {
+    title: "Challenge the Dragon",
+    question: "You decided to challenge the dragon and free the princess. Now or never.\n How do you approach?",
+    answers: [
+      {
+        buttonText: "Draw sword, yell: “Foul beast, fight me and die!” ",
+        resolution:
+          "You engage in fight with the dragon, click next.",
+        item: null,
+        skill: null,
+        value: 0,
+        condition: {}
+      },
+      {
+        buttonText: "Draw sword, approach silently. Ambush the beast while its not aware , you know where to strike.",
+        resolution:
+          "You engage in fight with the dragon, click next.",
+        item: null,
+        skill: null,
+        value: 0,
+        condition: {key: "SecretWeakness", operator: "<", value: 1}
+      },
+      {
+        buttonText: " Dear Parga, your smouldering eyes ignites my heart. Leave the princess and be mine!",
+        resolution:
+          "You engage the dragon, click next.",
+        item: null,
+        skill: null,
+        value: 0,
+        condition: {key: "SecretMotive", operator: "<", value: 1}
+      }
+    ],
+    nextModal: ["Dragon", "end"],
+    challengePhoto: "",
+    wikiInfo: "TODO",
+    wikiPhoto: "",
+  }
 };
 
 export default ChallengeConstants;
