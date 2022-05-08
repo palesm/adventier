@@ -3,12 +3,12 @@ const ChallengeConstants = {
     title: "Challenge at this location ended",
     //wiki data
     wikiInfo: ``,
-    wikiPhoto: '@assets/heroes-sqr',
+    wikiPhoto: "@assets/heroes-sqr",
     //challenge data
     question: "close this modal",
     answers: [],
     resolutions: [],
-    challengePhoto: '@assets/heroes-sqr',
+    challengePhoto: "@assets/heroes-sqr",
   },
   heroes: {
     title: "Hősök tere",
@@ -21,11 +21,11 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    wikiPhoto: '@assets/heroes-sqr',
+    wikiPhoto: "@assets/heroes-sqr",
     //challenge data
     question: "meghágod-e a sárkányt?",
     answers: ["naná", "persze", "hogyne"],
-    challengePhoto: '@assets/heroes-sqr',
+    challengePhoto: "@assets/heroes-sqr",
   },
   //ANDRIS
   halaszbastya: {
@@ -37,7 +37,7 @@ const ChallengeConstants = {
     Budapest, Hungary. Needless to say, there used to be real castle walls
      where now you can take fantastic photos from, but the present day 
      structure has never served as an actual fortification in Buda.`,
-    challengePhoto: '@assets/fuligjimmy',
+    challengePhoto: "@assets/fuligjimmy",
     question: `As you approach the Fisherman Bastion, 
     you meet with a young gentlemen, who claims to be Don Fülig di St. James. His lean,   
       shouldered figure is matched by an adolescently smooth, yet bony and broad face. I heard
@@ -45,7 +45,7 @@ const ChallengeConstants = {
        Anyway, I am just here for my knife Clues to be gathered: 
        something from the view from the bastion (mock question)`,
     password: "pw",
-    wikiPhoto: '@assets/fisherman',
+    wikiPhoto: "@assets/fisherman",
     nextModal: ["end", "end", "end"],
   },
   bazilika: {
@@ -59,8 +59,8 @@ const ChallengeConstants = {
           co-cathedral of the Roman Catholic Archdiocese of 
           Esztergom-Budapest. Today, it is the third largest church 
           building in present-day Hungary.`,
-          challengePhoto: '@assets/senkialfonz',
-          wikiPhoto: '@assets/ststephen',
+    challengePhoto: "@assets/senkialfonz",
+    wikiPhoto: "@assets/ststephen",
     question: "feladat",
     password: "pw",
   },
@@ -72,7 +72,7 @@ const ChallengeConstants = {
       its location,[5] is the seat of the National Assembly of Hungary, 
       a notable landmark of Hungary, and a popular tourist destination 
       in Budapest.`,
-    challengePhoto: '@assets/piszkosfred',
+    challengePhoto: "@assets/piszkosfred",
     question: "",
     password: "pw",
     wikiPhoto: "/assets/parlament.jpg",
@@ -84,10 +84,10 @@ const ChallengeConstants = {
     in Budapest. It was first completed in 1265, although the massive 
     Baroque palace today occupying most of the site was built between
       1749 and 1769.`,
-    challengePhoto: '@assets/piszkosfred',
+    challengePhoto: "@assets/piszkosfred",
     question: "",
     password: "pw",
-    wikiPhoto: '@assets/parlament'
+    wikiPhoto: "@assets/parlament",
   },
   //(S)lay the Dragon
 
@@ -153,16 +153,29 @@ const ChallengeConstants = {
     “I tell you one secret , but choose wisely as your life depends on it”
     `,
     answers: [
-      "How can one slay the dragon with one strike",
-      "Why the dragon kidnapped princess Matilda",
-      "Whats the dragon greatest fear",
+      {
+        buttonText: "How can one slay the dragon with one strike",
+        resolution:
+          "Her scales is damaged under her front right leg, one good strike, and you can easily reach the beasts heart.",
+        item: null,
+        skill: null,
+      },
+      {
+        buttonText: "Why the dragon kidnapped princess Matilda",
+        resolution:
+          "Her name is Parga and she is lonely, our princess helped a lot of maiden to find true love, and Parga seek her council",
+        item: null,
+        skill: null,
+      },
+      {
+        buttonText: "Whats the dragon greatest fear",
+        resolution:
+          "She is afraid of goats, as their eyes are mirror of the evil",
+        item: null,
+        skill: null,
+      },
     ],
     scenePhoto: "@assets/heroes-sqr",
-    resolutions: [
-      " Her scales is damaged under her front right leg, one good strike, and you can easily reach the beasts heart.",
-      "Her name is Parga and she is lonely, our princess helped a lot of maiden to find true love, and Parga seek her council",
-      "She is afraid of goats, as their eyes are mirror of the evil",
-    ],
     nextModal: ["end", "end", "end"],
   },
 };

@@ -20,6 +20,7 @@ const store = createStore({
         Might: 0,
         Wit: 0,
         Constitution: 0,
+        secret1: false
       },
     };
   },
