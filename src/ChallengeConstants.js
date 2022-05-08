@@ -139,7 +139,7 @@ const ChallengeConstants = {
     title: "Chapel",
     //wiki data
     wikiInfo: `TODO`,
-    wikiPhoto: "@assets/heroes-sqr",
+    wikiPhoto: "../img/Chapel.png",
     //challenge data
     question: `The Priest offers his blessings to you as you tell him your goals.`,
     answers: [
@@ -165,7 +165,7 @@ const ChallengeConstants = {
         value: 3
       }
     ],
-    challengePhoto: "@assets/heroes-sqr",
+    challengePhoto: "../img/chapelInner.png",
     nextModal: ["end", "end", "end"],
   },
   Anonymus: {
@@ -211,15 +211,33 @@ const ChallengeConstants = {
     challengePhoto: "../img/anonkerdez.png",
     nextModal: ["end", "end", "end"],
   },
-  ChallengeDragon: {
-    title: "Challenge the Dragon",
-    //wiki data
-    wikiInfo: `TODO`,
+  Castle: {
+    title: "Castle Vajdahunyad",
+    wikiInfo: "TODO",
     wikiPhoto: "@assets/heroes-sqr",
-    //challenge data
-    question: `You decided to challenge the dragon and free the princess. Now or never.
-    How do you approach:    
-    `,
+    question: "The Black Dragon. Her claws deeply embedded in the stone wall as her long body wrapped around the tallest tower. She rests her head on the roof of the tower, small puffs of smoke emerges from her nostrils.\n Are you ready to face the dragon?",
+    answers: [
+      {
+        buttonText: "yes, challenge the dragon",
+        resolution: "You decided to take action",
+        item: null,
+        skill: null,
+        value: 0
+      },
+      {
+        buttonText: "no, prepare a bit more.",
+        resolution: "You decided to gather more stuff",
+        item: null,
+        skill: null,
+        value: 0
+      }
+    ],
+    nextModal: ["Dragon", "end"],
+    challengePhoto: ""
+  },
+  Dragon: {
+    title: "Challenge the Dragon",
+    question: "You decided to challenge the dragon and free the princess. Now or never.\n How do you approach?",
     answers: [
       {
         buttonText: "Draw sword, yell: “Foul beast, fight me and die!” ",
@@ -238,60 +256,21 @@ const ChallengeConstants = {
         skill: null,
         value: 0,
         condition: {key: "SecretWeakness", operator: "<", value: 1}
-      }
-    ],
-    scenePhoto: "@assets/heroes-sqr",
-    nextModal: ["end", "end", "end"],
-  },
-  Castle: {
-    title: "Castle Vajdahunyad",
-    wikiInfo: "TODO",
-    wikiPhoto: "@assets/heroes-sqr",
-    question: "The Black Dragon. Her claws deeply embedded in the stone wall as her long body wrapped around the tallest tower. She rests her head on the roof of the tower, small puffs of smoke emerges from her nostrils.\n Are you ready to face the dragon?",
-    answers: [
-      {
-        buttonText: "yes, challenge the dragon",
-        resolution: "You decided to take action",
-        item: null,
-        skill: null,
-        value: 0
       },
       {
-        buttonText: "no, prepare a bit more.",
-        resolution: "You decided to geather more stuff",
-        item: null,
-        skill: null,
-        value: 0
-      }
-    ]
-  },
-  Dragon: {
-    title: "Challenge the Dragon",
-    question: "You decided to challenge the dragon and free the princess. Now or never.\n How do you approach?",
-    answers: [
-      {
-        buttonText: "Draw sword, yell: “Foul beast, fight me and die!”",
-        resolution: "The dragon’s eyes open, the beast moves surprisingly quickly. She jumps down, opens her huge jaws, fire erupts!",
-        item: null,
-        skill: null,
-        value: 0
-      },
-      {
-        buttonText: "Draw sword, approach silently. Ambush the beast while its not aware , you know where to strike.",
-        resolution: "The dragon’s eyes open, the beast moves surprisingly quickly. She jumps down, opens her huge jaws, fire erupts!",
+        buttonText: " Dear Parga, your smouldering eyes ignites my heart. Leave the princess and be mine!",
+        resolution:
+          "You engage the dragon, click next.",
         item: null,
         skill: null,
         value: 0,
-        condition: {key: "SecretWeakness", operator: "<", value: 1}
-      },
-      {
-        buttonText: "Dear Parga, your smouldering eyes ignites my heart. Leave the princess and be mine!",
-        resolution: "The dragon’s eyes open, the beast moves surprisingly quickly. She jumps down, opens her huge jaws, fire erupts!",
-        item: null,
-        skill: null,
-        value: 0
+        condition: {key: "SecretMotive", operator: "<", value: 1}
       }
-    ]
+    ],
+    nextModal: ["Dragon", "end"],
+    challengePhoto: "",
+    wikiInfo: "TODO",
+    wikiPhoto: "",
   }
 };
 
