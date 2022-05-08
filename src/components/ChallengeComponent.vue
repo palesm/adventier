@@ -1,26 +1,26 @@
 <template>
   <div>
-    <div class="parent">
+    <div class="parent" v-if="!isAnswered">
       <div class="description">{{ constants[location].question }}</div>
       <div class="vr"></div>
       <div>
         <img :src="src" />
       </div>
     </div>
-    <div v-if="!constants[location].password">
-        <div
-          v-for="(answer, index) in constants[location].answers"
-          :key="`answer-${index}`"
+    <div v-if="!constants[location].password && !isAnswered">
+      <div
+        v-for="(answer, index) in constants[location].answers"
+        :key="`answer-${index}`"
+      >
+        <button
+          @click="answerQuestion(index)"
+          :disabled="isDisabledByCondition(index) || isAnswered"
+          class="btn btn-primary password-btn"
         >
-          <button
-            @click="answerQuestion(index)"
-            :disabled="isDisabledByCondition(index)"
-            class="btn btn-primary password-btn"
-          >
-            {{ answer.buttonText }}
-          </button>
-        </div>
+          {{ answer.buttonText }}
+        </button>
       </div>
+    </div>
     <div v-if="constants[location].password">
       <input v-model="text" />
       <button
@@ -32,16 +32,18 @@
       </button>
     </div>
   </div>
-  <div v-if="resolution">
-    {{ resolution }}
+  <div v-if="resolution" class="parent resolution">
+    <div class="resolution-text">
+      {{ resolution }}
+    </div>
+    <button
+      v-if="!constants[location].password"
+      @click="handleNext"
+      class="btn btn-secondary"
+    >
+      Next
+    </button>
   </div>
-  <button
-    v-if="!constants[location].password && resolution"
-    @click="handleNext"
-    class="btn btn-secondary"
-  >
-    Next
-  </button>
 </template>
 
 <script>
@@ -125,6 +127,14 @@ export default {
   display: flex;
 }
 
+.resolution {
+  justify-content: space-between;
+}
+
+.resolution-text {
+  padding-right: 1rem;
+}
+
 img {
   max-heigth: 200px;
   max-width: 200px;
@@ -134,7 +144,6 @@ img {
 .password-btn {
   margin: 0.5rem;
 }
-
 
 .description {
   padding-right: 20px;
