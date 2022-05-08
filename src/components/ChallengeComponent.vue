@@ -110,21 +110,6 @@ export default {
     src() {
       return this.constants[this.location].challengePhoto;
     },
-    // isDisabledByCondition(index) {
-    //   debugger;
-    //   if (index.typeOf == "number") {
-    //     const condition =
-    //       this.constants[this.location].answers[index].condition;
-    //     const userProp = `${this.$store.getters}.get${condition.key}`;
-    //     if (condition.operator === "<") {
-    //       return userProp < condition.value;
-    //     }
-    //     if (condition.operator === ">") {
-    //       return userProp > condition.value;
-    //     }
-    //   }
-    //   return false;
-    // },
   },
 };
 </script>
