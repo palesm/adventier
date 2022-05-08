@@ -1,3 +1,4 @@
+
 const ChallengeConstants = {
   end: {
     title: "Challenge at this location ended",
@@ -37,7 +38,7 @@ const ChallengeConstants = {
     Unknown Soldier. The square lies at the outbound end of Andrássy Avenue
     next to City Park (Városliget). It hosts the Museum of Fine Arts and the
     Palace of Art (Műcsarnok).`,
-    photo: '@assets/heroes-sqr',
+    wikiPhoto: '/assets/heroes-sqr',
     question: "meghágod-e a sárkányt?",
     answers: ["naná", "persze", "hogyne"],
     resolutions: ["ügyi voltál", "meghaltál", "szexelhetsz a sárkánnyal"],
@@ -72,7 +73,7 @@ const ChallengeConstants = {
           photo: '@assets/senkialfonz',
           question: "feladat",
           password: "pw",
-          scenePhoto: '@assets/ststephen'
+          scenePhoto: '/assets/ststephen.jpg'
   },
   parlament: {
     title: "Parlament",
@@ -82,10 +83,10 @@ const ChallengeConstants = {
       its location,[5] is the seat of the National Assembly of Hungary, 
       a notable landmark of Hungary, and a popular tourist destination 
       in Budapest.`,
-    photo: '@assets/piszkosfred',
+    wikiPhoto: '/assets/piszkosfred.jpg',
     question: "feladat",
     password: "pw",
-    scenePhoto: '@assets/parlament'
+    challengePhoto: '/assets/parlament.jpg'
   },
   budavar: {
     title: "Budavári Palota",
