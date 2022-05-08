@@ -6,7 +6,7 @@
     </div>
 
     <div class="RescueThePricess" @click="this.$router.push('/map2')">
-      <h4 id="RescueHer">Rescue The Princess</h4>
+      <h5 id="RescueHer">Rescue The Princess</h5>
       <img class="img1" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon3.png" alt="" width="26" height="26">
@@ -14,14 +14,14 @@
     </div>
 
     <div class="Challange2" @click="this.$router.push('/map')">
-      <h4 id="Second">Retrieve the stolen relic</h4>
+      <h5 id="Second">Retrieve the stolen relic</h5>
       <img class="img1" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon4.png" alt="" width="26" height="26">
     </div>
 
     <div class="Challange2">
-      <h4 id="Third">The Future to be implemented</h4>
+      <h5 id="Third">The Future to be implemented</h5>
       <img class="img2" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
       <img class="img2" src="./../../public/img/dragon4.png" alt="" width="26" height="26">
