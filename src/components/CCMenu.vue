@@ -10,6 +10,7 @@
       <img class="img1" src="./../../public/img/dragon1.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon2.png" alt="" width="26" height="26">
       <img class="img1" src="./../../public/img/dragon3.png" alt="" width="26" height="26">
+      <h6 id="Team">Team: Holy Knights</h6>
     </div>
 
     <div class="Challange2" @click="this.$router.push('/map')">
@@ -56,6 +57,10 @@ export default {
 }
 </script>
 <style scoped>
+#Team {
+  padding-left: 10px;
+  display: inline-block;
+}
 .CCMenu {
   background-image: url(@/../public/img/bg.png);
   width: 100%;
